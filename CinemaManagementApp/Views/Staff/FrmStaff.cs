@@ -16,5 +16,15 @@ namespace CinemaManagementApp.Views.Staff
         {
             InitializeComponent();
         }
-    }
+
+		private void FrmStaff_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void lblTitleChildForm_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

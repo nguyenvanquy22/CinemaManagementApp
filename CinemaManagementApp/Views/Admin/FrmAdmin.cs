@@ -149,5 +149,15 @@ namespace CinemaManagementApp.Views.Admin
         {
 
         }
-    }
+
+		private void panelTitle_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void FrmAdmin_Load(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
