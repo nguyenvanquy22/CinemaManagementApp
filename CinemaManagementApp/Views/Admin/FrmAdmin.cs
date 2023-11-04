@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
+using CinemaManagementApp.Views.Admin.Form_Child;
 using FontAwesome.Sharp;
 using Color = System.Drawing.Color;
 
@@ -28,6 +29,9 @@ namespace CinemaManagementApp.Views.Admin
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
+
+            ActivateButton(IBtnMovie, RGBColors.color1);
+            OpenChildForm(new FrmMovie());
         }
 
         // Struct color
@@ -93,61 +97,61 @@ namespace CinemaManagementApp.Views.Admin
             panelDesktop.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitleChildForm.Text = childForm.Text;
+            lblTitleChildForm.Text = childForm.Text.ToUpper();
         }
 
         // Menu button click
         private void IBtnMovie_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new Form_Child.FrmMovie());
+            OpenChildForm(new FrmMovie());
         }
 
         private void IBtnShow_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new Form_Child.FrmShow());
+            OpenChildForm(new FrmShow());
         }
 
         private void IBtnProduct_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
-            OpenChildForm(new Form_Child.FrmProduct());
+            OpenChildForm(new FrmProduct());
         }
 
         private void IBtnStaff_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
-            OpenChildForm(new Form_Child.FrmStaff());
+            OpenChildForm(new FrmStaff());
         }
 
         private void IBtnCustomer_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
-            OpenChildForm(new Form_Child.FrmCustomer());
+            OpenChildForm(new FrmCustomer());
         }
 
         private void IBtnStatistic_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
-            OpenChildForm(new Form_Child.FrmStatistic());
+            OpenChildForm(new FrmStatistic());
         }
 
         private void IBtnHistory_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
-            OpenChildForm(new Form_Child.FrmHistory());
+            OpenChildForm(new FrmInvoice());
         }
 
         private void IBtnProblem_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color8);
-            OpenChildForm(new Form_Child.FrmProblem());
+            OpenChildForm(new FrmProblem());
         }
 
         private void IBtnLogout_Click(object sender, EventArgs e)
         {
 
         }
-    }
+	}
 }

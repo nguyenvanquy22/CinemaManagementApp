@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CinemaManagementApp.Views.Admin.Form_Child
+namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal
 {
-    public partial class FrmHistory : Form
-    {
-        public FrmHistory()
-        {
-            InitializeComponent();
-        }
-    }
+	public partial class FromModalModifyCustomer : Form
+	{
+		public FromModalModifyCustomer()
+		{
+			InitializeComponent();
+		}
+	}
 }
