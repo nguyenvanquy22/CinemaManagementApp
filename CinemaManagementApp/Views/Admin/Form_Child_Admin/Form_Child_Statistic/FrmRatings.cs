@@ -49,7 +49,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             }
         }
 
-        private void statisticCustomer (string periodStatistic)
+        private void statisticCustomer(string periodStatistic)
         {
             // Top Customers
             string sql = "";
@@ -62,7 +62,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                     from KHACHHANG 
                         inner join HOADONBAN on KHACHHANG.MaKH = HOADONBAN.MaKH
                         inner join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB
-                        inner join VE on HOADONBAN.MaVe = VE.MaVe
+                        inner join VE on HOADONBAN.MaHDB = VE.MaHDB
                         inner join LICHCHIEU on VE.MaLC = LICHCHIEU.MaLC
                     where YEAR(HOADONBAN.NgayXuatHD) = '" + cbCustTimeYear.SelectedItem + "'"
                         + " group by KHACHHANG.TenKH, KHACHHANG.SDT"
@@ -77,7 +77,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                     from KHACHHANG 
                         inner join HOADONBAN on KHACHHANG.MaKH = HOADONBAN.MaKH
                         inner join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB
-                        inner join VE on HOADONBAN.MaVe = VE.MaVe
+                        inner join VE on HOADONBAN.MaHDB = VE.MaHDB
                         inner join LICHCHIEU on VE.MaLC = LICHCHIEU.MaLC
                     where YEAR(HOADONBAN.NgayXuatHD) = '" + cbCustTimeYear.SelectedItem + "'" +
                             " and MONTH(HOADONBAN.NgayXuatHD) = '" + cbCustTimeMonth.SelectedItem + "'"
@@ -92,6 +92,8 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             dgvTopCustomers.Columns[5].HeaderText = "Chi tiêu";
             dgvTopCustomers.Columns[3].Visible = false;
             dgvTopCustomers.Columns[4].Visible = false;
+            dgvTopCustomers.Columns[0].Width = 50;
+            dgvTopCustomers.Columns[1].Width = 150;
 
             //ChartArea chartArea = chartCustomer.ChartAreas[0];
             Series seriesCust = chartCustomer.Series["Top1Cust"];
@@ -104,7 +106,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             seriesCust.Points.AddXY("Sản phẩm", tongChiSP / tongChi);
         }
 
-        private void statisticStaff (string periodStatistic)
+        private void statisticStaff(string periodStatistic)
         {
             // Top Staffs
             string sql = "";
@@ -116,7 +118,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 from NHANVIEN 
 	                inner join HOADONBAN on NHANVIEN.MaNV = HOADONBAN.MaNV
 	                inner join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB
-	                inner join VE on HOADONBAN.MaVe = VE.MaVe
+	                inner join VE on HOADONBAN.MaHDB = VE.MaHDB
                     inner join LICHCHIEU on VE.MaLC = LICHCHIEU.MaLC
                     where YEAR(HOADONBAN.NgayXuatHD) = '" + cbStaffTimeYear.SelectedItem + "'"
                         + " group by NHANVIEN.MaNV, NHANVIEN.TenNV"
@@ -130,7 +132,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 from NHANVIEN 
 	                inner join HOADONBAN on NHANVIEN.MaNV = HOADONBAN.MaNV
 	                inner join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB
-	                inner join VE on HOADONBAN.MaVe = VE.MaVe
+	                inner join VE on HOADONBAN.MaHDB = VE.MaHDB
                     inner join LICHCHIEU on VE.MaLC = LICHCHIEU.MaLC
                     where YEAR(HOADONBAN.NgayXuatHD) = '" + cbStaffTimeYear.SelectedItem + "'" +
                             " and MONTH(HOADONBAN.NgayXuatHD) = '" + cbStaffTimeMonth.SelectedItem + "'"
@@ -143,6 +145,8 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             dgvTopStaffs.Columns[1].HeaderText = "Mã NV";
             dgvTopStaffs.Columns[2].HeaderText = "Tên NV";
             dgvTopStaffs.Columns[3].HeaderText = "Doanh số";
+            dgvTopStaffs.Columns[0].Width = 50;
+            dgvTopStaffs.Columns[2].Width = 150;
 
             //ChartArea chartArea = chartCustomer.ChartAreas[0];
             Series seriesStaff = chartStaff.Series["TopStaff"];
@@ -214,6 +218,40 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
         private void cbStaffTimeMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             statisticStaff("Tháng");
+        }
+
+        private void dgvTopCustomers_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                if (e.Value != null)
+                {
+                    if (double.TryParse(e.Value.ToString(), out double result))
+                    {
+                        // Định dạng giá trị với hai chữ số sau dấu phẩy
+                        e.Value = result.ToString("N2");
+                        e.FormattingApplied = true;
+                    }
+
+                }
+            }
+        }
+
+        private void dgvTopStaffs_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                if (e.Value != null)
+                {
+                    if (double.TryParse(e.Value.ToString(), out double result))
+                    {
+                        // Định dạng giá trị với hai chữ số sau dấu phẩy
+                        e.Value = result.ToString("N2");
+                        e.FormattingApplied = true;
+                    }
+
+                }
+            }
         }
     }
 }

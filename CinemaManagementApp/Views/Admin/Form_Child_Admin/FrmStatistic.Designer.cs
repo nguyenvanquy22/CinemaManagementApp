@@ -38,6 +38,7 @@
             // 
             // panelTab
             // 
+            this.panelTab.BackColor = System.Drawing.Color.Gainsboro;
             this.panelTab.Controls.Add(this.tabTrend);
             this.panelTab.Controls.Add(this.tabRatings);
             this.panelTab.Controls.Add(this.tabIOcomeTotal);
@@ -49,7 +50,8 @@
             // 
             // tabTrend
             // 
-            this.tabTrend.BackColor = System.Drawing.SystemColors.Control;
+            this.tabTrend.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabTrend.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabTrend.FlatAppearance.BorderSize = 0;
             this.tabTrend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabTrend.Location = new System.Drawing.Point(248, 0);
@@ -63,7 +65,8 @@
             // 
             // tabRatings
             // 
-            this.tabRatings.BackColor = System.Drawing.SystemColors.Control;
+            this.tabRatings.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabRatings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabRatings.FlatAppearance.BorderSize = 0;
             this.tabRatings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabRatings.Location = new System.Drawing.Point(120, 0);
@@ -77,7 +80,8 @@
             // 
             // tabIOcomeTotal
             // 
-            this.tabIOcomeTotal.BackColor = System.Drawing.SystemColors.Control;
+            this.tabIOcomeTotal.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabIOcomeTotal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabIOcomeTotal.FlatAppearance.BorderSize = 0;
             this.tabIOcomeTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabIOcomeTotal.Location = new System.Drawing.Point(0, 0);

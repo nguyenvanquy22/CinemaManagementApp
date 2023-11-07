@@ -259,6 +259,7 @@
             // btnChonAnh
             // 
             this.btnChonAnh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnChonAnh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChonAnh.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnChonAnh.IconChar = FontAwesome.Sharp.IconChar.FileImage;
             this.btnChonAnh.IconColor = System.Drawing.SystemColors.ControlText;

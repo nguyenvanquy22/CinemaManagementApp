@@ -79,11 +79,23 @@
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Child_Statistic\FrmRatings.Designer.cs">
       <DependentUpon>FrmRatings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalUpdateShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalUpdateShow.Designer.cs">
+      <DependentUpon>FrmModalUpdateShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyMovie.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyMovie.Designer.cs">
       <DependentUpon>FrmModalModifyMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyProduct.Designer.cs">
+      <DependentUpon>FrmModalModifyProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyStaff.cs">
       <SubType>Form</SubType>
@@ -91,11 +103,17 @@
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyStaff.Designer.cs">
       <DependentUpon>FrmModalModifyStaff.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FromModalModifyCustomer.cs">
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalImportProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FromModalModifyCustomer.Designer.cs">
-      <DependentUpon>FromModalModifyCustomer.cs</DependentUpon>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalImportProduct.Designer.cs">
+      <DependentUpon>FrmModalImportProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalAddShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalAddShow.Designer.cs">
+      <DependentUpon>FrmModalAddShow.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Admin\Form_Child_Admin\FrmCustomer.cs">
       <SubType>Form</SubType>
@@ -181,14 +199,23 @@
     <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Child_Statistic\FrmRatings.resx">
       <DependentUpon>FrmRatings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalUpdateShow.resx">
+      <DependentUpon>FrmModalUpdateShow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyMovie.resx">
       <DependentUpon>FrmModalModifyMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyProduct.resx">
+      <DependentUpon>FrmModalModifyProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalModifyStaff.resx">
       <DependentUpon>FrmModalModifyStaff.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FromModalModifyCustomer.resx">
-      <DependentUpon>FromModalModifyCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalImportProduct.resx">
+      <DependentUpon>FrmModalImportProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalAddShow.resx">
+      <DependentUpon>FrmModalAddShow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\Form_Child_Admin\FrmCustomer.resx">
       <DependentUpon>FrmCustomer.cs</DependentUpon>
@@ -236,6 +263,13 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="bin\Debug\Images\FoodsPhotos\CocaCola.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\FranchFry.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Lavie.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Pepsi.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Popcorn.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Sevenup.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Snack.jpg" />
     <Content Include="bin\Debug\Images\MoviePhotos\Avatar.jpg" />
     <Content Include="bin\Debug\Images\MoviePhotos\AvengersEndgame.jpg" />
     <Content Include="bin\Debug\Images\MoviePhotos\Frozen.jpg" />

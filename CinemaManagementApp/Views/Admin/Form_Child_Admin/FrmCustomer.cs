@@ -29,7 +29,10 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 			dgvListCustomer.Columns[2].HeaderText = "Tuổi";
 			dgvListCustomer.Columns[3].HeaderText = "Email";
 			dgvListCustomer.Columns[4].HeaderText = "SDT";
-		}
+            dgvListCustomer.Columns[0].Width = 120;
+            dgvListCustomer.Columns[2].Width = 120;
+
+        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {

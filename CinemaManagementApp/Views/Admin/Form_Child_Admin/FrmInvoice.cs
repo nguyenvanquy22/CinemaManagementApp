@@ -40,7 +40,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 	                    inner join khachhang on khachhang.makh = hoadonban.makh
 	                    inner join nhanvien on nhanvien.manv = hoadonban.manv
 	                    inner join cthdb on cthdb.mahdb = hoadonban.mahdb
-	                    inner join ve on ve.mave = hoadonban.mave
+	                    inner join ve on ve.mahdb = hoadonban.mahdb
 	                    inner join lichchieu on lichchieu.malc = ve.malc";
             if (isBtnSearchClick)
             {
@@ -86,6 +86,8 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 
         private void tabOutcomeInvoice_Click(object sender, EventArgs e)
         {
+            tabOutcomeInvoice.BackColor = Color.WhiteSmoke;
+            tabIncomeInvoice.BackColor = Color.Gainsboro;
             outcomeInvoice = true;
             isBtnSearchClick = false;
             txtSearch.Text = "";
@@ -94,6 +96,8 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 
         private void tabIncomeInvoice_Click(object sender, EventArgs e)
         {
+            tabIncomeInvoice.BackColor = Color.WhiteSmoke;
+            tabOutcomeInvoice.BackColor = Color.Gainsboro;
             outcomeInvoice = false;
             isBtnSearchClick = false;
             txtSearch.Text = "";
@@ -184,6 +188,22 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
                 MessageBox.Show("Xuất file thành công.");
             }
             exApp.Quit();
+        }
+
+        private void dgvListInvoice_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 5)
+            {
+                if (e.Value != null)
+                {
+                    if (double.TryParse(e.Value.ToString(), out double result))
+                    {
+                        // Định dạng giá trị với hai chữ số sau dấu phẩy
+                        e.Value = result.ToString("N2");
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
         }
     }
 }

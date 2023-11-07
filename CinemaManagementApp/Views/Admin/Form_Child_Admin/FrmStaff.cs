@@ -39,18 +39,24 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 			dgvListStaff.Columns[5].HeaderText = "Email";
 			dgvListStaff.Columns[6].HeaderText = "Chức vụ";
 			dgvListStaff.Columns[7].HeaderText = "Ngày bắt đầu";
+			dgvListStaff.Columns[0].Width = 100;
+            dgvListStaff.Columns[1].Width = 160;
+            dgvListStaff.Columns[2].Width = 100;
+
+            DataTable chucVu = dtbase.ReadData("Select ChucVu from NHANVIEN group by ChucVu");
+            cbChucVu.Items.Add("Chức vụ");
+            cbChucVu.SelectedIndex = 0;
+
+            foreach (DataRow dd in chucVu.Rows)
+            {
+                cbChucVu.Items.Add(dd["ChucVu"].ToString());
+            }
 		}
 
-		private void dgvListStaff_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			btnUpdate.Enabled = true;
-			btnDelete.Enabled = true;
-		}
-
-		private void dgvListStaff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-		{
-			// Lấy giá trị từ cột cụ thể của hàng được chọn
-			/*DataGridViewRow selectedRow;
+        private void dgvListStaff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Lấy giá trị từ cột cụ thể của hàng được chọn
+            /*DataGridViewRow selectedRow;
 			if (e.RowIndex >= 0)
 			{
 				selectedRow = dgvListStaff.Rows[e.RowIndex];
@@ -63,16 +69,25 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 			
 			DataTable dt = dtbase.ReadData(sql);*/
 
-			// Hiện modal chi tiết nhan vien
-			drawModal(btnUpdate.Name);
+            // Hiện modal chi tiết nhan vien
+            drawModal(btnUpdate.Name);
 
-			// Update data
-			dtbase.ChangeData(sql);
-			sql = "SELECT manv,tennv,gioitinh,ngaysinh,sdt,email,chucvu,ngayvaolam from NHANVIEN";
-			dgvListStaff.DataSource = dtbase.ReadData(sql);
-		}
+            // Update data
+            if (!sql.Equals(""))
+            {
+                dtbase.ChangeData(sql);
+                sql = "SELECT manv,tennv,gioitinh,ngaysinh,sdt,email,chucvu,ngayvaolam from NHANVIEN";
+                dgvListStaff.DataSource = dtbase.ReadData(sql);
+            }
+        }
 
-		private void drawModal (string btnName)
+        private void dgvListStaff_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnUpdate.Enabled = true;
+            btnDelete.Enabled = true;
+        }
+
+        private void drawModal (string btnName)
 		{
 			DataTable dt;
 			Form modalBackground = new Form();
@@ -164,16 +179,30 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 
 		private void btnSearch_Click(object sender, EventArgs e)
 		{
-			sql = @"SELECT manv,tennv,gioitinh,ngaysinh,sdt,email,chucvu,ngayvaolam 
+			filterData();
+        }
+
+        private void cbChucVu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+			filterData();
+        }
+
+		private void filterData()
+		{
+            sql = @"SELECT manv,tennv,gioitinh,ngaysinh,sdt,email,chucvu,ngayvaolam 
 					FROM NHANVIEN 
 					WHERE TenNV is not null";
 
-			if (txtSearch.Text.Trim() != "")
-			{
-				sql += " and TenNV like '%" + txtSearch.Text + "%'";
-			}
+            if (txtSearch.Text.Trim() != "")
+            {
+                sql += " and TenNV like N'%" + txtSearch.Text + "%'";
+            }
+            if (cbChucVu.SelectedIndex != 0)
+            {
+                sql += " and chucvu = N'" + cbChucVu.SelectedItem + "'";
+            }
 
-			dgvListStaff.DataSource = dtbase.ReadData(sql);
-		}
-	}
+            dgvListStaff.DataSource = dtbase.ReadData(sql);
+        }
+    }
 }

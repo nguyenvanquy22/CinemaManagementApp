@@ -29,45 +29,46 @@
         private void InitializeComponent()
         {
             this.paneFilter = new System.Windows.Forms.Panel();
-            this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.cbChucVu = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
             this.btnCreate = new FontAwesome.Sharp.IconButton();
             this.btnUpdate = new FontAwesome.Sharp.IconButton();
+            this.panelControl = new System.Windows.Forms.Panel();
             this.panelListStaff = new System.Windows.Forms.Panel();
             this.dgvListStaff = new System.Windows.Forms.DataGridView();
-            this.panelControl = new System.Windows.Forms.Panel();
             this.paneFilter.SuspendLayout();
+            this.panelControl.SuspendLayout();
             this.panelListStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListStaff)).BeginInit();
-            this.panelControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // paneFilter
             // 
-            this.paneFilter.Controls.Add(this.cbFilter);
+            this.paneFilter.Controls.Add(this.cbChucVu);
             this.paneFilter.Controls.Add(this.txtSearch);
             this.paneFilter.Controls.Add(this.btnSearch);
-            this.paneFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.paneFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.paneFilter.Location = new System.Drawing.Point(0, 0);
             this.paneFilter.Name = "paneFilter";
             this.paneFilter.Size = new System.Drawing.Size(982, 62);
             this.paneFilter.TabIndex = 5;
             // 
-            // cbFilter
+            // cbChucVu
             // 
-            this.cbFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(36, 18);
-            this.cbFilter.Name = "cbFilter";
-            this.cbFilter.Size = new System.Drawing.Size(130, 28);
-            this.cbFilter.TabIndex = 9;
+            this.cbChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbChucVu.FormattingEnabled = true;
+            this.cbChucVu.Location = new System.Drawing.Point(840, 15);
+            this.cbChucVu.Name = "cbChucVu";
+            this.cbChucVu.Size = new System.Drawing.Size(130, 28);
+            this.cbChucVu.TabIndex = 9;
+            this.cbChucVu.SelectedIndexChanged += new System.EventHandler(this.cbChucVu_SelectedIndexChanged);
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(197, 19);
+            this.txtSearch.Location = new System.Drawing.Point(29, 18);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 27);
             this.txtSearch.TabIndex = 8;
@@ -80,7 +81,7 @@
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearch.IconSize = 28;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(447, 15);
+            this.btnSearch.Location = new System.Drawing.Point(268, 12);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 36);
             this.btnSearch.TabIndex = 7;
@@ -141,29 +142,6 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // panelListStaff
-            // 
-            this.panelListStaff.Controls.Add(this.dgvListStaff);
-            this.panelListStaff.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelListStaff.Location = new System.Drawing.Point(0, 62);
-            this.panelListStaff.Name = "panelListStaff";
-            this.panelListStaff.Size = new System.Drawing.Size(982, 427);
-            this.panelListStaff.TabIndex = 6;
-            // 
-            // dgvListStaff
-            // 
-            this.dgvListStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvListStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvListStaff.Location = new System.Drawing.Point(0, 0);
-            this.dgvListStaff.Name = "dgvListStaff";
-            this.dgvListStaff.RowHeadersWidth = 51;
-            this.dgvListStaff.RowTemplate.Height = 24;
-            this.dgvListStaff.Size = new System.Drawing.Size(982, 427);
-            this.dgvListStaff.TabIndex = 1;
-            this.dgvListStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListStaff_CellClick);
-            this.dgvListStaff.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListStaff_CellDoubleClick);
-            // 
             // panelControl
             // 
             this.panelControl.Controls.Add(this.btnDelete);
@@ -175,22 +153,45 @@
             this.panelControl.Size = new System.Drawing.Size(982, 64);
             this.panelControl.TabIndex = 7;
             // 
+            // panelListStaff
+            // 
+            this.panelListStaff.Controls.Add(this.dgvListStaff);
+            this.panelListStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelListStaff.Location = new System.Drawing.Point(0, 62);
+            this.panelListStaff.Name = "panelListStaff";
+            this.panelListStaff.Size = new System.Drawing.Size(982, 427);
+            this.panelListStaff.TabIndex = 8;
+            // 
+            // dgvListStaff
+            // 
+            this.dgvListStaff.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvListStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListStaff.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListStaff.Location = new System.Drawing.Point(0, 0);
+            this.dgvListStaff.Name = "dgvListStaff";
+            this.dgvListStaff.RowHeadersWidth = 51;
+            this.dgvListStaff.RowTemplate.Height = 24;
+            this.dgvListStaff.Size = new System.Drawing.Size(982, 427);
+            this.dgvListStaff.TabIndex = 0;
+            this.dgvListStaff.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListStaff_CellClick);
+            this.dgvListStaff.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListStaff_CellDoubleClick);
+            // 
             // FrmStaff
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 553);
-            this.Controls.Add(this.paneFilter);
             this.Controls.Add(this.panelListStaff);
+            this.Controls.Add(this.paneFilter);
             this.Controls.Add(this.panelControl);
             this.Name = "FrmStaff";
             this.Text = "Quản lý nhân sự";
             this.Load += new System.EventHandler(this.FrmStaff_Load);
             this.paneFilter.ResumeLayout(false);
             this.paneFilter.PerformLayout();
+            this.panelControl.ResumeLayout(false);
             this.panelListStaff.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListStaff)).EndInit();
-            this.panelControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -200,11 +201,11 @@
         private FontAwesome.Sharp.IconButton btnDelete;
         private FontAwesome.Sharp.IconButton btnCreate;
         private FontAwesome.Sharp.IconButton btnUpdate;
-        private System.Windows.Forms.Panel panelListStaff;
         private System.Windows.Forms.Panel panelControl;
-        private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.ComboBox cbChucVu;
         private System.Windows.Forms.TextBox txtSearch;
         private FontAwesome.Sharp.IconButton btnSearch;
-		private System.Windows.Forms.DataGridView dgvListStaff;
-	}
+        private System.Windows.Forms.Panel panelListStaff;
+        private System.Windows.Forms.DataGridView dgvListStaff;
+    }
 }

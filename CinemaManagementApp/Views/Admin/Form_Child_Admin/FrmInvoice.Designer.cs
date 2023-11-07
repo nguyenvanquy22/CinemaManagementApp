@@ -47,6 +47,7 @@
             // 
             // panelControl
             // 
+            this.panelControl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelControl.Controls.Add(this.btnExportFile);
             this.panelControl.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControl.Location = new System.Drawing.Point(0, 489);
@@ -73,6 +74,7 @@
             // 
             // panelTab
             // 
+            this.panelTab.BackColor = System.Drawing.Color.Gainsboro;
             this.panelTab.Controls.Add(this.tabIncomeInvoice);
             this.panelTab.Controls.Add(this.tabOutcomeInvoice);
             this.panelTab.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,7 +85,8 @@
             // 
             // tabIncomeInvoice
             // 
-            this.tabIncomeInvoice.BackColor = System.Drawing.SystemColors.Control;
+            this.tabIncomeInvoice.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabIncomeInvoice.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabIncomeInvoice.FlatAppearance.BorderSize = 0;
             this.tabIncomeInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabIncomeInvoice.Location = new System.Drawing.Point(120, 0);
@@ -97,7 +100,8 @@
             // 
             // tabOutcomeInvoice
             // 
-            this.tabOutcomeInvoice.BackColor = System.Drawing.SystemColors.Control;
+            this.tabOutcomeInvoice.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabOutcomeInvoice.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tabOutcomeInvoice.FlatAppearance.BorderSize = 0;
             this.tabOutcomeInvoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tabOutcomeInvoice.Location = new System.Drawing.Point(0, 0);
@@ -111,6 +115,7 @@
             // 
             // panelFilter
             // 
+            this.panelFilter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFilter.Controls.Add(this.txtSearch);
             this.panelFilter.Controls.Add(this.btnSearch);
             this.panelFilter.Dock = System.Windows.Forms.DockStyle.Top;
@@ -165,6 +170,7 @@
             this.dgvListInvoice.RowTemplate.Height = 24;
             this.dgvListInvoice.Size = new System.Drawing.Size(982, 371);
             this.dgvListInvoice.TabIndex = 0;
+            this.dgvListInvoice.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListInvoice_CellFormatting);
             // 
             // FrmInvoice
             // 

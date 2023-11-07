@@ -19,15 +19,14 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal
 		public event EventHandler<string> DataUpdated;
         Functions ft = new Functions();
         private DataRow infoNhanvien;
-		private DataTable dtNhanvien;
-		private String btnClick;
-		public FrmModalModifyStaff(DataTable dt, String btnClick)
+		private string btnClick;
+		public FrmModalModifyStaff(DataTable dt, string btnClick)
 		{
 			InitializeComponent();
 			this.btnClick = btnClick;
 			if (btnClick.Equals("btnUpdate")) infoNhanvien = dt.Rows[0];
 		}
-		public FrmModalModifyStaff(String btnClick)
+		public FrmModalModifyStaff(string btnClick)
 		{
 			InitializeComponent();
 			this.btnClick = btnClick;

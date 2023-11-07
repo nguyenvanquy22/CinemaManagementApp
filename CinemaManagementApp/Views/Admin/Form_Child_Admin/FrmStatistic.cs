@@ -38,16 +38,25 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 
         private void tabIOcomeTotal_Click(object sender, EventArgs e)
         {
+            tabIOcomeTotal.BackColor = Color.WhiteSmoke;
+            tabRatings.BackColor = Color.Gainsboro;
+            tabTrend.BackColor = Color.Gainsboro;
             OpenChildForm(new FrmIOcomeTotal());
         }
 
         private void tabRatings_Click(object sender, EventArgs e)
         {
+            tabIOcomeTotal.BackColor = Color.Gainsboro;
+            tabRatings.BackColor = Color.WhiteSmoke;
+            tabTrend.BackColor = Color.Gainsboro;
             OpenChildForm(new FrmRatings());
         }
 
         private void tabTrend_Click(object sender, EventArgs e)
         {
+            tabIOcomeTotal.BackColor = Color.Gainsboro;
+            tabRatings.BackColor = Color.Gainsboro;
+            tabTrend.BackColor = Color.WhiteSmoke;
             OpenChildForm(new FrmTrend());
         }
     }

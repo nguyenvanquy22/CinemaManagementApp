@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.paneFilter = new System.Windows.Forms.Panel();
-            this.cb = new System.Windows.Forms.ComboBox();
+            this.cbDinhDang = new System.Windows.Forms.ComboBox();
+            this.cbTheLoai = new System.Windows.Forms.ComboBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.btnDelete = new FontAwesome.Sharp.IconButton();
@@ -46,7 +47,8 @@
             // 
             // paneFilter
             // 
-            this.paneFilter.Controls.Add(this.cb);
+            this.paneFilter.Controls.Add(this.cbDinhDang);
+            this.paneFilter.Controls.Add(this.cbTheLoai);
             this.paneFilter.Controls.Add(this.txtSearch);
             this.paneFilter.Controls.Add(this.btnSearch);
             this.paneFilter.Dock = System.Windows.Forms.DockStyle.Top;
@@ -55,19 +57,30 @@
             this.paneFilter.Size = new System.Drawing.Size(982, 64);
             this.paneFilter.TabIndex = 0;
             // 
-            // cb
+            // cbDinhDang
             // 
-            this.cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb.FormattingEnabled = true;
-            this.cb.Location = new System.Drawing.Point(36, 15);
-            this.cb.Name = "cb";
-            this.cb.Size = new System.Drawing.Size(130, 28);
-            this.cb.TabIndex = 6;
+            this.cbDinhDang.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbDinhDang.FormattingEnabled = true;
+            this.cbDinhDang.Location = new System.Drawing.Point(828, 17);
+            this.cbDinhDang.Name = "cbDinhDang";
+            this.cbDinhDang.Size = new System.Drawing.Size(130, 28);
+            this.cbDinhDang.TabIndex = 7;
+            this.cbDinhDang.SelectedIndexChanged += new System.EventHandler(this.cbDinhDang_SelectedIndexChanged);
+            // 
+            // cbTheLoai
+            // 
+            this.cbTheLoai.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTheLoai.FormattingEnabled = true;
+            this.cbTheLoai.Location = new System.Drawing.Point(670, 17);
+            this.cbTheLoai.Name = "cbTheLoai";
+            this.cbTheLoai.Size = new System.Drawing.Size(130, 28);
+            this.cbTheLoai.TabIndex = 6;
+            this.cbTheLoai.SelectedIndexChanged += new System.EventHandler(this.cbTheLoai_SelectedIndexChanged);
             // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearch.Location = new System.Drawing.Point(194, 16);
+            this.txtSearch.Location = new System.Drawing.Point(30, 17);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(200, 27);
             this.txtSearch.TabIndex = 5;
@@ -80,7 +93,7 @@
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearch.IconSize = 28;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(447, 12);
+            this.btnSearch.Location = new System.Drawing.Point(263, 12);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 36);
             this.btnSearch.TabIndex = 3;
@@ -205,7 +218,8 @@
         private System.Windows.Forms.DataGridView dgvListMovie;
         private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.Panel panelControl;
-        private System.Windows.Forms.ComboBox cb;
+        private System.Windows.Forms.ComboBox cbTheLoai;
         private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.ComboBox cbDinhDang;
     }
 }

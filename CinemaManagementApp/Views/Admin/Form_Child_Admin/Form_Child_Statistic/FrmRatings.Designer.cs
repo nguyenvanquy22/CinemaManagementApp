@@ -81,6 +81,7 @@
             this.dgvTopStaffs.RowTemplate.Height = 24;
             this.dgvTopStaffs.Size = new System.Drawing.Size(483, 264);
             this.dgvTopStaffs.TabIndex = 4;
+            this.dgvTopStaffs.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTopStaffs_CellFormatting);
             // 
             // panelStaffChart
             // 
@@ -125,6 +126,7 @@
             // 
             // panelTimeStaffFilter
             // 
+            this.panelTimeStaffFilter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelTimeStaffFilter.Controls.Add(this.cbStaffTimeMonth);
             this.panelTimeStaffFilter.Controls.Add(this.cbStaffTimeYear);
             this.panelTimeStaffFilter.Controls.Add(this.cbStaffPeriod);
@@ -178,6 +180,7 @@
             this.dgvTopCustomers.RowTemplate.Height = 24;
             this.dgvTopCustomers.Size = new System.Drawing.Size(489, 264);
             this.dgvTopCustomers.TabIndex = 4;
+            this.dgvTopCustomers.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTopCustomers_CellFormatting);
             // 
             // chartCustomer
             // 
@@ -212,6 +215,7 @@
             // 
             // panelProductFilter
             // 
+            this.panelProductFilter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelProductFilter.Controls.Add(this.cbCustTimeMonth);
             this.panelProductFilter.Controls.Add(this.cbCustTimeYear);
             this.panelProductFilter.Controls.Add(this.cbCustPeriod);

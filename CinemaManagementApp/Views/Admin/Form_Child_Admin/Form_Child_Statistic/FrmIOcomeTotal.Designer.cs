@@ -36,6 +36,19 @@
             this.cbTimeYear = new System.Windows.Forms.ComboBox();
             this.cbPeriod = new System.Windows.Forms.ComboBox();
             this.panelStatistic = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblOutcomeTotalValue = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTotalProd = new System.Windows.Forms.Label();
             this.lblTotalTicket = new System.Windows.Forms.Label();
@@ -43,12 +56,15 @@
             this.lblPercentTicket = new System.Windows.Forms.Label();
             this.lblProduct = new System.Windows.Forms.Label();
             this.lblTicket = new System.Windows.Forms.Label();
-            this.lblComeTotalValue = new System.Windows.Forms.Label();
+            this.lblIncomeTotalValue = new System.Windows.Forms.Label();
             this.lbInComeTotal = new System.Windows.Forms.Label();
             this.panelChart = new System.Windows.Forms.Panel();
             this.chartIOCome = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelFilter.SuspendLayout();
             this.panelStatistic.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartIOCome)).BeginInit();
@@ -56,6 +72,7 @@
             // 
             // panelFilter
             // 
+            this.panelFilter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelFilter.Controls.Add(this.cbTimeMonth);
             this.panelFilter.Controls.Add(this.cbTimeYear);
             this.panelFilter.Controls.Add(this.cbPeriod);
@@ -100,12 +117,147 @@
             // 
             // panelStatistic
             // 
+            this.panelStatistic.Controls.Add(this.panel2);
             this.panelStatistic.Controls.Add(this.panel1);
             this.panelStatistic.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelStatistic.Location = new System.Drawing.Point(0, 73);
             this.panelStatistic.Name = "panelStatistic";
             this.panelStatistic.Size = new System.Drawing.Size(261, 480);
             this.panelStatistic.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 237);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(261, 243);
+            this.panel2.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.label10);
+            this.panel3.Controls.Add(this.label11);
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(261, 237);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.lblOutcomeTotalValue);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(261, 237);
+            this.panel4.TabIndex = 9;
+            // 
+            // lblOutcomeTotalValue
+            // 
+            this.lblOutcomeTotalValue.AutoSize = true;
+            this.lblOutcomeTotalValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOutcomeTotalValue.Location = new System.Drawing.Point(13, 49);
+            this.lblOutcomeTotalValue.Name = "lblOutcomeTotalValue";
+            this.lblOutcomeTotalValue.Size = new System.Drawing.Size(19, 20);
+            this.lblOutcomeTotalValue.TabIndex = 8;
+            this.lblOutcomeTotalValue.Text = "0";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(7, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(196, 25);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Tổng chi sản phẩm";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(160, 174);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(14, 16);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(14, 174);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(14, 16);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "0";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(157, 130);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 20);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "0%";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(12, 130);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 20);
+            this.label12.TabIndex = 5;
+            this.label12.Text = "0%";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(157, 96);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(84, 20);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Sản phẩm";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(12, 96);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 20);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Vé";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(13, 47);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(19, 20);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "0";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(7, 12);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(164, 25);
+            this.label16.TabIndex = 1;
+            this.label16.Text = "Tổng doanh thu";
             // 
             // panel1
             // 
@@ -115,7 +267,7 @@
             this.panel1.Controls.Add(this.lblPercentTicket);
             this.panel1.Controls.Add(this.lblProduct);
             this.panel1.Controls.Add(this.lblTicket);
-            this.panel1.Controls.Add(this.lblComeTotalValue);
+            this.panel1.Controls.Add(this.lblIncomeTotalValue);
             this.panel1.Controls.Add(this.lbInComeTotal);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -126,72 +278,78 @@
             // lblTotalProd
             // 
             this.lblTotalProd.AutoSize = true;
-            this.lblTotalProd.Location = new System.Drawing.Point(157, 179);
+            this.lblTotalProd.Location = new System.Drawing.Point(145, 175);
             this.lblTotalProd.Name = "lblTotalProd";
-            this.lblTotalProd.Size = new System.Drawing.Size(44, 16);
+            this.lblTotalProd.Size = new System.Drawing.Size(14, 16);
             this.lblTotalProd.TabIndex = 8;
-            this.lblTotalProd.Text = "label8";
+            this.lblTotalProd.Text = "0";
             // 
             // lblTotalTicket
             // 
             this.lblTotalTicket.AutoSize = true;
-            this.lblTotalTicket.Location = new System.Drawing.Point(12, 179);
+            this.lblTotalTicket.Location = new System.Drawing.Point(14, 174);
             this.lblTotalTicket.Name = "lblTotalTicket";
-            this.lblTotalTicket.Size = new System.Drawing.Size(44, 16);
+            this.lblTotalTicket.Size = new System.Drawing.Size(14, 16);
             this.lblTotalTicket.TabIndex = 7;
-            this.lblTotalTicket.Text = "label7";
+            this.lblTotalTicket.Text = "0";
             // 
             // lblPercentProd
             // 
             this.lblPercentProd.AutoSize = true;
-            this.lblPercentProd.Location = new System.Drawing.Point(157, 130);
+            this.lblPercentProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPercentProd.Location = new System.Drawing.Point(142, 130);
             this.lblPercentProd.Name = "lblPercentProd";
-            this.lblPercentProd.Size = new System.Drawing.Size(44, 16);
+            this.lblPercentProd.Size = new System.Drawing.Size(35, 20);
             this.lblPercentProd.TabIndex = 6;
-            this.lblPercentProd.Text = "label6";
+            this.lblPercentProd.Text = "0%";
             // 
             // lblPercentTicket
             // 
             this.lblPercentTicket.AutoSize = true;
+            this.lblPercentTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPercentTicket.Location = new System.Drawing.Point(12, 130);
             this.lblPercentTicket.Name = "lblPercentTicket";
-            this.lblPercentTicket.Size = new System.Drawing.Size(44, 16);
+            this.lblPercentTicket.Size = new System.Drawing.Size(35, 20);
             this.lblPercentTicket.TabIndex = 5;
-            this.lblPercentTicket.Text = "label5";
+            this.lblPercentTicket.Text = "0%";
             // 
             // lblProduct
             // 
             this.lblProduct.AutoSize = true;
-            this.lblProduct.Location = new System.Drawing.Point(157, 96);
+            this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProduct.Location = new System.Drawing.Point(142, 96);
             this.lblProduct.Name = "lblProduct";
-            this.lblProduct.Size = new System.Drawing.Size(68, 16);
+            this.lblProduct.Size = new System.Drawing.Size(84, 20);
             this.lblProduct.TabIndex = 4;
             this.lblProduct.Text = "Sản phẩm";
             // 
             // lblTicket
             // 
             this.lblTicket.AutoSize = true;
+            this.lblTicket.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTicket.Location = new System.Drawing.Point(12, 96);
             this.lblTicket.Name = "lblTicket";
-            this.lblTicket.Size = new System.Drawing.Size(24, 16);
+            this.lblTicket.Size = new System.Drawing.Size(29, 20);
             this.lblTicket.TabIndex = 3;
             this.lblTicket.Text = "Vé";
             // 
-            // lblComeTotalValue
+            // lblIncomeTotalValue
             // 
-            this.lblComeTotalValue.AutoSize = true;
-            this.lblComeTotalValue.Location = new System.Drawing.Point(12, 43);
-            this.lblComeTotalValue.Name = "lblComeTotalValue";
-            this.lblComeTotalValue.Size = new System.Drawing.Size(44, 16);
-            this.lblComeTotalValue.TabIndex = 2;
-            this.lblComeTotalValue.Text = "label2";
+            this.lblIncomeTotalValue.AutoSize = true;
+            this.lblIncomeTotalValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIncomeTotalValue.Location = new System.Drawing.Point(13, 47);
+            this.lblIncomeTotalValue.Name = "lblIncomeTotalValue";
+            this.lblIncomeTotalValue.Size = new System.Drawing.Size(19, 20);
+            this.lblIncomeTotalValue.TabIndex = 2;
+            this.lblIncomeTotalValue.Text = "0";
             // 
             // lbInComeTotal
             // 
             this.lbInComeTotal.AutoSize = true;
-            this.lbInComeTotal.Location = new System.Drawing.Point(12, 12);
+            this.lbInComeTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInComeTotal.Location = new System.Drawing.Point(7, 12);
             this.lbInComeTotal.Name = "lbInComeTotal";
-            this.lbInComeTotal.Size = new System.Drawing.Size(100, 16);
+            this.lbInComeTotal.Size = new System.Drawing.Size(164, 25);
             this.lbInComeTotal.TabIndex = 1;
             this.lbInComeTotal.Text = "Tổng doanh thu";
             // 
@@ -237,6 +395,11 @@
             this.Load += new System.EventHandler(this.FrmIOcomeTotal_Load);
             this.panelFilter.ResumeLayout(false);
             this.panelStatistic.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelChart.ResumeLayout(false);
@@ -261,7 +424,20 @@
         private System.Windows.Forms.Label lblPercentTicket;
         private System.Windows.Forms.Label lblProduct;
         private System.Windows.Forms.Label lblTicket;
-        private System.Windows.Forms.Label lblComeTotalValue;
+        private System.Windows.Forms.Label lblIncomeTotalValue;
         private System.Windows.Forms.Label lbInComeTotal;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblOutcomeTotalValue;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
     }
 }

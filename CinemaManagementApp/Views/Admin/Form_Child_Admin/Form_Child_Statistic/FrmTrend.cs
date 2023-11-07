@@ -50,22 +50,22 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             }
         }
 
-        private void statisticMovie (string periodStatistic)
+        private void statisticMovie(string periodStatistic)
         {
             // Top Movies
             string sql = "";
             if (periodStatistic == "Năm")
             {
-                 sql = @"
+                sql = @"
                     select TOP 5 ROW_NUMBER() OVER (ORDER BY sum(LICHCHIEU.GiaVe) DESC) AS STT,
                             Phim.TenPhim, sum(LICHCHIEU.GiaVe) as DoanhThu, Count(VE.MaVe) as SoVe
                     from PHIM 
 	                    inner join LICHCHIEU on phim.MaPhim = LICHCHIEU.MaPhim
 	                    inner join VE on LICHCHIEU.MaLC = VE.MaLC
-                        inner join HOADONBAN on VE.MaVe = HOADONBAN.MaVe
+                        inner join HOADONBAN on HOADONBAN.MaHDB = VE.MaHDB
                     where YEAR(HOADONBAN.NgayXuatHD) = '" + cbMovieTimeYear.SelectedItem + "'"
-                    + " group by PHIM.TenPhim"
-                    + " order by sum(LICHCHIEU.GiaVe) desc;";
+                   + " group by PHIM.TenPhim"
+                   + " order by sum(LICHCHIEU.GiaVe) desc;";
             }
             if (periodStatistic == "Tháng")
             {
@@ -75,7 +75,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                     from PHIM 
 	                    inner join LICHCHIEU on phim.MaPhim = LICHCHIEU.MaPhim
 	                    inner join VE on LICHCHIEU.MaLC = VE.MaLC
-                        inner join HOADONBAN on VE.MaVe = HOADONBAN.MaVe
+                        inner join HOADONBAN on HOADONBAN.MaHDB = VE.MaHDB
                      where YEAR(HOADONBAN.NgayXuatHD) = '" + cbMovieTimeYear.SelectedItem + "'" +
                             " and MONTH(HOADONBAN.NgayXuatHD) = '" + cbMovieTimeMonth.SelectedItem + "'"
                     + " group by PHIM.TenPhim"
@@ -87,6 +87,8 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             dgvTopMovies.Columns[1].HeaderText = "Tên phim";
             dgvTopMovies.Columns[2].HeaderText = "Doanh thu";
             dgvTopMovies.Columns[3].HeaderText = "Số vé";
+            dgvTopMovies.Columns[0].Width = 50;
+            dgvTopMovies.Columns[1].Width = 150;
 
             //ChartArea chartArea = chartMovies.ChartAreas[0];
             Series seriesMovies = chartMovies.Series["Movies"];
@@ -99,7 +101,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 seriesMovies.Points.AddXY(stt, doanhThu);
             }
         }
-        private void statisticProduct (string periodStatistic)
+        private void statisticProduct(string periodStatistic)
         {
             // Top Products
             string sql = "";
@@ -138,6 +140,9 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             dgvTopProducts.Columns[1].HeaderText = "Tên SP";
             dgvTopProducts.Columns[2].HeaderText = "Doanh thu";
             dgvTopProducts.Columns[3].HeaderText = "Số lượng";
+            dgvTopProducts.Columns[0].Width = 50;
+            dgvTopProducts.Columns[1].Width = 150;
+
 
             //ChartArea chartArea = chartMovies.ChartAreas[0];
             Series seriesProducts = chartProducts.Series["Products"];
@@ -150,7 +155,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 seriesProducts.Points.AddXY(stt, doanhThu);
             }
         }
-        
+
         // period statistic movie
         private void cbMoviePeriod_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -209,6 +214,39 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
         private void cbProdTimeMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             statisticProduct("Tháng");
+        }
+
+        private void dgvTopMovies_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                if (e.Value != null)
+                {
+                    if (double.TryParse(e.Value.ToString(), out double result))
+                    {
+                        // Định dạng giá trị với hai chữ số sau dấu phẩy
+                        e.Value = result.ToString("N2");
+                        e.FormattingApplied = true;
+                    }
+                }
+            }
+        }
+
+        private void dgvTopProducts_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                if (e.Value != null)
+                {
+                    if (double.TryParse(e.Value.ToString(), out double result))
+                    {
+                        // Định dạng giá trị với hai chữ số sau dấu phẩy
+                        e.Value = result.ToString("N2");
+                        e.FormattingApplied = true;
+                    }
+
+                }
+            }
         }
     }
 }

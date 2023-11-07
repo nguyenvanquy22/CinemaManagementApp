@@ -97,6 +97,7 @@
             this.dgvTopMovies.RowTemplate.Height = 24;
             this.dgvTopMovies.Size = new System.Drawing.Size(489, 264);
             this.dgvTopMovies.TabIndex = 4;
+            this.dgvTopMovies.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTopMovies_CellFormatting);
             // 
             // label2
             // 
@@ -129,6 +130,7 @@
             // 
             // panelMovieFilter
             // 
+            this.panelMovieFilter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelMovieFilter.Controls.Add(this.cbMovieTimeMonth);
             this.panelMovieFilter.Controls.Add(this.cbMovieTimeYear);
             this.panelMovieFilter.Controls.Add(this.cbMoviePeriod);
@@ -211,6 +213,7 @@
             this.dgvTopProducts.RowTemplate.Height = 24;
             this.dgvTopProducts.Size = new System.Drawing.Size(480, 261);
             this.dgvTopProducts.TabIndex = 4;
+            this.dgvTopProducts.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTopProducts_CellFormatting);
             // 
             // label1
             // 
@@ -243,6 +246,7 @@
             // 
             // panelProductFilter
             // 
+            this.panelProductFilter.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelProductFilter.Controls.Add(this.cbProdTimeMonth);
             this.panelProductFilter.Controls.Add(this.cbProdTimeYear);
             this.panelProductFilter.Controls.Add(this.cbProdPeriod);

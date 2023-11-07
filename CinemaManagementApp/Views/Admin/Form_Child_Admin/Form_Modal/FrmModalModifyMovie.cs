@@ -17,18 +17,17 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal
         Functions ft =  new Functions();
         public event EventHandler<string> DataUpdated;
         private DataRow infoMovies;
-        private DataTable dtMovies;
-        private String btnClick;
+        private string btnClick;
         private string sql = "";
         string fileImage = "";
 
-        public FrmModalModifyMovie(DataTable dt, String btnClick)
+        public FrmModalModifyMovie(DataTable dt, string btnClick)
         {
             InitializeComponent();
             this.btnClick = btnClick;
             if (btnClick.Equals("btnUpdate")) infoMovies = dt.Rows[0];
         }
-        public FrmModalModifyMovie(String btnClick)
+        public FrmModalModifyMovie(string btnClick)
         {
             InitializeComponent();
             this.btnClick = btnClick;

@@ -59,7 +59,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
 		                    sum(CTHDB.DonGia*CTHDB.SoLuong*(1-CTHDB.GiamGia/100)) + sum(LICHCHIEU.GiaVe) as TongThu
                     from HOADONBAN 
 	                    inner join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB
-	                    inner join VE on HOADONBAN.MaVe = VE.MaVe
+	                    inner join VE on HOADONBAN.MaHDB = VE.MaHDB
                         inner join LICHCHIEU on VE.MaLC = LICHCHIEU.MaLC
                     where YEAR(HOADONBAN.NgayXuatHD) = '" + cbTimeYear.SelectedItem + "'"
                     + "GROUP BY MONTH(HOADONBAN.NgayXuatHD)"
@@ -73,7 +73,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
 		                    sum(CTHDB.DonGia*CTHDB.SoLuong*(1-CTHDB.GiamGia/100)) + sum(LICHCHIEU.GiaVe) as TongThu
                     from HOADONBAN 
 	                    inner join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB
-	                    inner join VE on HOADONBAN.MaVe = VE.MaVe
+	                    inner join VE on HOADONBAN.MaHDB = VE.MaHDB
                         inner join LICHCHIEU on VE.MaLC = LICHCHIEU.MaLC
                     where YEAR(HOADONBAN.NgayXuatHD) = '" + cbTimeYear.SelectedItem + "'" +
                             " and MONTH(HOADONBAN.NgayXuatHD) = '" + cbTimeMonth.SelectedItem + "'"
@@ -99,11 +99,14 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 seriesIOCome.Points.AddXY(time, doanhThu);
             }
 
-            lblComeTotalValue.Text = Math.Round(totalIncome,2).ToString() + " VND";
-            lblTotalProd.Text = Math.Round(totalProd,2).ToString() + " VND";
-            lblTotalTicket.Text = Math.Round(totalTicket,2).ToString() + " VND";
+            lblIncomeTotalValue.Text = Math.Round(totalIncome,2).ToString() + "K VND";
+            lblTotalProd.Text = Math.Round(totalProd,2).ToString() + "K VND";
+            lblTotalTicket.Text = Math.Round(totalTicket,2).ToString() + "K VND";
             lblPercentProd.Text = (Math.Round(totalProd * 100 / totalIncome, 2)).ToString() + "%";
             lblPercentTicket.Text = (Math.Round(totalTicket * 100 / totalIncome,2)).ToString() + "%";
+
+            //DataTable tongChiSP = dtbase.ReadData("Select ");
+            //lblOutcomeTotalValue.Text = 
         }
 
         private void cbPeriod_SelectedIndexChanged(object sender, EventArgs e)
@@ -111,7 +114,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             if (cbPeriod.Text == "Năm")
             {
                 cbTimeMonth.Enabled = false;
-                            }
+            }
             if (cbPeriod.Text == "Tháng")
             {
                 cbTimeMonth.Enabled = true;
