@@ -1,10 +1,15 @@
-﻿using System;
+﻿using CinemaManagementApp.Views.Admin;
+using CinemaManagementApp.Views.Staff;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Design;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,10 +18,16 @@ namespace CinemaManagementApp.Views.Login
 {
     public partial class FrmLogin : Form
     {
+		//private Form currentForm;
+
 		string[] imageFiles = Directory.GetFiles("..\\Debug\\Images\\MoviePhotos", "*.jpg"
 				, SearchOption.AllDirectories);
 		Timer timer = new Timer();
 		int count = 0;
+
+		public static string userName;
+		public static string staffID;
+		Classes.DataProcessor db = new Classes.DataProcessor();
 		public FrmLogin()
         {
             InitializeComponent();
@@ -67,6 +78,65 @@ namespace CinemaManagementApp.Views.Login
 		private void FrmLogin_FormClosed(object sender, FormClosedEventArgs e)
 		{
 			timer.Stop();
+		}
+
+		private void btnLogin_Click(object sender, EventArgs e)
+		{
+			// Tải khoản không bỏ trống
+			if (txtUsername.Text.Trim().Equals(""))
+			{
+				MessageBox.Show("Vui lòng nhập tên đăng nhập", "Thông báo!", MessageBoxButtons.OK);
+			}
+			else
+			{
+				// Mật khẩu không bỏ trống
+				if (txtPassword.Text.Trim().Equals(""))
+				{
+					MessageBox.Show("Vui lòng nhập mật khẩu,", "Thông báo!", MessageBoxButtons.OK);
+				}
+				else
+				{
+					string password = "";
+					// Nhân viên có chức vụ = 1; Quản lý có chức vụ = 2
+					int chucvu = 0;
+					string sql = "select MaNV, MatKhau, ChucVu from NHANVIEN where TenDangNhap = '" + txtUsername.Text.Trim() + "'";
+					DataTable dataTable = db.ReadData(sql);
+					if (dataTable.Rows.Count > 0)
+					{
+						password = dataTable.Rows[0]["MatKhau"].ToString();
+						chucvu = int.Parse(dataTable.Rows[0]["chucvu"].ToString());
+					}
+					Console.WriteLine(password);
+					Console.WriteLine(chucvu);
+					if (txtPassword.Text.Trim().Equals(password))
+					{
+                        // Form nhân viên
+                        staffID = dataTable.Rows[0]["MaNV"].ToString();
+                        if (chucvu == 1)
+						{
+							OpenNextForm(new FrmStaff());
+						}
+						// Form admin
+						else 
+						{ 
+							OpenNextForm(new FrmAdmin()); 
+						}
+					}
+					else
+					{
+						MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác. "
+						+ "Vui lòng nhập lại!", "Lỗi!", MessageBoxButtons.OK);
+					}
+				}
+			}
+		}
+
+		// Mở Form khi đăng nhập thành công
+		private void OpenNextForm(Form nextForm)
+		{
+			userName = txtUsername.Text;
+			nextForm.Show();
+			this.Hide();
 		}
 	}
 }

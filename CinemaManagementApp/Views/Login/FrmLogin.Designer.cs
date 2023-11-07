@@ -31,13 +31,13 @@
 			this.ptBMovie = new System.Windows.Forms.PictureBox();
 			this.panelLogin = new System.Windows.Forms.Panel();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnLogin = new System.Windows.Forms.Button();
 			this.lblForgotPassword = new System.Windows.Forms.Label();
 			this.txtPassword = new System.Windows.Forms.TextBox();
 			this.txtUsername = new System.Windows.Forms.TextBox();
 			this.IcPassword = new FontAwesome.Sharp.IconPictureBox();
 			this.icPUsername = new FontAwesome.Sharp.IconPictureBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.btnLogin = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.ptBMovie)).BeginInit();
 			this.panelLogin.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -80,6 +80,21 @@
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(644, 332);
 			this.panel1.TabIndex = 1;
+			// 
+			// btnLogin
+			// 
+			this.btnLogin.BackColor = System.Drawing.Color.Blue;
+			this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.btnLogin.FlatAppearance.BorderSize = 0;
+			this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLogin.ForeColor = System.Drawing.Color.White;
+			this.btnLogin.Location = new System.Drawing.Point(324, 227);
+			this.btnLogin.Name = "btnLogin";
+			this.btnLogin.Size = new System.Drawing.Size(182, 50);
+			this.btnLogin.TabIndex = 5;
+			this.btnLogin.Text = "Đăng nhập";
+			this.btnLogin.UseVisualStyleBackColor = false;
+			this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
 			// 
 			// lblForgotPassword
 			// 
@@ -153,25 +168,10 @@
 			this.label1.Text = "WELCOME BACK";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// btnLogin
-			// 
-			this.btnLogin.BackColor = System.Drawing.Color.Blue;
-			this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.btnLogin.FlatAppearance.BorderSize = 0;
-			this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnLogin.ForeColor = System.Drawing.Color.White;
-			this.btnLogin.Location = new System.Drawing.Point(324, 227);
-			this.btnLogin.Name = "btnLogin";
-			this.btnLogin.Size = new System.Drawing.Size(182, 50);
-			this.btnLogin.TabIndex = 5;
-			this.btnLogin.Text = "Đăng nhập";
-			this.btnLogin.UseVisualStyleBackColor = false;
-			// 
 			// FrmLogin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSize = true;
 			this.BackColor = System.Drawing.Color.White;
 			this.ClientSize = new System.Drawing.Size(982, 453);
 			this.Controls.Add(this.panelLogin);

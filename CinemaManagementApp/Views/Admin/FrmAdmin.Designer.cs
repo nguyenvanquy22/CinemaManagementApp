@@ -340,9 +340,9 @@
 			// iconCurrChildForm
 			// 
 			this.iconCurrChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-			this.iconCurrChildForm.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.iconCurrChildForm.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.iconCurrChildForm.IconChar = FontAwesome.Sharp.IconChar.House;
-			this.iconCurrChildForm.IconColor = System.Drawing.SystemColors.ButtonFace;
+			this.iconCurrChildForm.IconColor = System.Drawing.SystemColors.ButtonHighlight;
 			this.iconCurrChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.iconCurrChildForm.IconSize = 40;
 			this.iconCurrChildForm.Location = new System.Drawing.Point(22, 22);
@@ -371,15 +371,16 @@
 			// 
 			// FrmAdmin
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.ClientSize = new System.Drawing.Size(1234, 654);
 			this.Controls.Add(this.panelDesktop);
 			this.Controls.Add(this.panelShadow);
 			this.Controls.Add(this.panelTitle);
 			this.Controls.Add(this.panelMenu);
 			this.Name = "FrmAdmin";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "FrmAdmin";
+			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAdmin_FormClosed);
 			this.Load += new System.EventHandler(this.FrmAdmin_Load);
 			this.panelMenu.ResumeLayout(false);
 			this.panelTitle.ResumeLayout(false);

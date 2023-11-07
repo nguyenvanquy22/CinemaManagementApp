@@ -159,5 +159,10 @@ namespace CinemaManagementApp.Views.Admin
 		{
 
 		}
+
+		private void FrmAdmin_FormClosed(object sender, FormClosedEventArgs e)
+		{
+            Application.Exit();
+		}
 	}
 }
