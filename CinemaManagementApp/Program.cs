@@ -19,7 +19,7 @@ namespace CinemaManagementApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmStaff());
+            Application.Run(new FrmLogin());
         }
     }
 }

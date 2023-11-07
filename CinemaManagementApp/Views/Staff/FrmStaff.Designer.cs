@@ -296,5 +296,5 @@
 		private System.Windows.Forms.Label lblTitleChildForm;
 		private System.Windows.Forms.Label lblUsername;
 		private System.Windows.Forms.Panel panelDesktop;
-	}
+    }
 }

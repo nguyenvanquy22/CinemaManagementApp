@@ -30,7 +30,11 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
         public void showProducts()
         {
             List<string> listFoodID = new List<string>();
-            string sql = "select MaSP, TenSP, SoLuong, LoaiSP, DonGia, Anh from SANPHAMKHAC";
+            string sql = "select MaSP, TenSP, SoLuong, LoaiSP, DonGia, Anh from SANPHAMKHAC ";
+            if (!txtSearch.Text.Trim().Equals(""))
+            {
+                sql += "Where TenSP like N'%" + txtSearch.Text.Trim() + "%'";
+            }
             DataTable dataTable = dt.ReadData(sql);
      
             // 
@@ -50,7 +54,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
                 Label price = new Label();
 
                 name.Text = dr["TenSP"].ToString();
-                price.Text = dr["DonGia"].ToString();
+                price.Text = dr["DonGia"].ToString() + "K";
 
                 IconButton btnUpdate = new IconButton();
 
@@ -130,6 +134,11 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
             {
                 modal.ShowDialog();
             }
+            showProducts();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
             showProducts();
         }
     }

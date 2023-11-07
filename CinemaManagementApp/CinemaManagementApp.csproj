@@ -42,10 +42,14 @@
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -59,6 +63,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\DataProcessor.cs" />
+    <Compile Include="Classes\Functions.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Child_Statistic\FrmIOcomeTotal.cs">
@@ -243,15 +250,23 @@
     </Compile>
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Properties.Resources.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmCustomer.resources" />
-    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmHistory.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmInvoice.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmMovie.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmProblem.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmProduct.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmShow.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmStaff.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmStatistic.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic.FrmIOcomeTotal.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic.FrmRatings.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic.FrmTrend.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal.FrmModalAddShow.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal.FrmModalImportProduct.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal.FrmModalModifyMovie.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal.FrmModalModifyProduct.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal.FrmModalModifyStaff.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal.FrmModalUpdateShow.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.FrmAdmin.resources" />
-    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Login.FrmLogin.resources" />
     <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Staff.FrmStaff.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -316,6 +331,19 @@
     <EmbeddedResource Include="Views\Admin\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Staff\FrmStaff.resx">
+      <DependentUpon>FrmStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
+    <None Include="bin\Debug\CinemaManagementApp.exe.config" />
+    <None Include="obj\Debug\CinemaManagementApp.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\CinemaManagementApp.csproj.CopyComplete" />
+    <None Include="obj\Debug\CinemaManagementApp.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\CinemaManagementApp.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -330,10 +358,36 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Folder Include="bin\Debug\Images\" />
-    <Folder Include="Classes\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\CinemaManagementApp.exe" />
+    <Content Include="bin\Debug\CinemaManagementApp.pdb" />
+    <Content Include="bin\Debug\FontAwesome.Sharp.dll" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\CocaCola.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\FranchFry.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Lavie.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Pepsi.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Popcorn.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Sevenup.jpg" />
+    <Content Include="bin\Debug\Images\FoodsPhotos\Snack.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\Avatar.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\AvengersEndgame.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\Frozen.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\GodzillaVsKong.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\Inception.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\Interstellar.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\Joker.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\Parasite.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\PulpFiction.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\TheLordoftheRings.jpg" />
+    <Content Include="bin\Debug\Images\MoviePhotos\Titanic.jpg" />
+    <Content Include="NOTICE.TXT" />
+    <Content Include="obj\Debug\CinemaManagementApp.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\CinemaManagementApp.exe" />
+    <Content Include="obj\Debug\CinemaManagementApp.pdb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

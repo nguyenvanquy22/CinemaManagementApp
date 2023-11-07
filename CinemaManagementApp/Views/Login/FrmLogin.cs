@@ -98,21 +98,21 @@ namespace CinemaManagementApp.Views.Login
 				{
 					string password = "";
 					// Nhân viên có chức vụ = 1; Quản lý có chức vụ = 2
-					int chucvu = 0;
+					string chucvu = "";
 					string sql = "select MaNV, MatKhau, ChucVu from NHANVIEN where TenDangNhap = '" + txtUsername.Text.Trim() + "'";
 					DataTable dataTable = db.ReadData(sql);
 					if (dataTable.Rows.Count > 0)
 					{
 						password = dataTable.Rows[0]["MatKhau"].ToString();
-						chucvu = int.Parse(dataTable.Rows[0]["chucvu"].ToString());
+						chucvu = dataTable.Rows[0]["chucvu"].ToString();
 					}
-					Console.WriteLine(password);
-					Console.WriteLine(chucvu);
+					//Console.WriteLine(password);
+					//Console.WriteLine(chucvu);
 					if (txtPassword.Text.Trim().Equals(password))
 					{
                         // Form nhân viên
                         staffID = dataTable.Rows[0]["MaNV"].ToString();
-                        if (chucvu == 1)
+                        if (chucvu.Equals("Nhân viên"))
 						{
 							OpenNextForm(new FrmStaff());
 						}

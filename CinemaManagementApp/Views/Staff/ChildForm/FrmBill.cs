@@ -1,21 +1,9 @@
-﻿using Aspose.Words.Tables;
-using CinemaManagementApp.Classes;
-using CinemaManagementApp.Views.Login;
-using NPOI.SS.UserModel;
-using NPOI.XSSF.UserModel;
+﻿using CinemaManagementApp.Classes;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Interop;
-using System.Windows.Media.Media3D;
-using Excel = Microsoft.Office.Interop.Excel;
 
 namespace CinemaManagementApp.Views.Staff.ChildForm
 {

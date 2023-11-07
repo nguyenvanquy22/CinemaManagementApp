@@ -29,7 +29,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
         public FrmMovie()
 		{
 			InitializeComponent();
-            showtime = dTPShowtime.Value;
+            showtime = dTPShowtime.Value.Date;
         }
 
         private void FrmMovie_Load(object sender, EventArgs e)
@@ -44,6 +44,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             string sql = "SELECT LichChieu.GioChieu, Phim.MaPhim FROM LichChieu "
                 + "JOIN Phim ON LichChieu.MaPhim = Phim.MaPhim "
                 + "where CONVERT(DATE, LichChieu.GioChieu) ='" + showtime + "'";
+            MessageBox.Show(showtime.ToString());
             listFilm(sql);
             setListFilm();
         }
