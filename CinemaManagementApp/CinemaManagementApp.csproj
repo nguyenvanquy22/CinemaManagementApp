@@ -331,6 +331,9 @@
     <EmbeddedResource Include="Views\Admin\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Staff\ChildForm\FrmMovie.resx">
+      <DependentUpon>FrmMovie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Staff\FrmStaff.resx">
       <DependentUpon>FrmStaff.cs</DependentUpon>
     </EmbeddedResource>

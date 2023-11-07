@@ -192,9 +192,9 @@
             this.lblUsername.ForeColor = System.Drawing.Color.White;
             this.lblUsername.Location = new System.Drawing.Point(64, 31);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(59, 20);
+            this.lblUsername.Size = new System.Drawing.Size(103, 20);
             this.lblUsername.TabIndex = 2;
-            this.lblUsername.Text = "label2";
+            this.lblUsername.Text = "Staff Name";
             // 
             // iconUsername
             // 
