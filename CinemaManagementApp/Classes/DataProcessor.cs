@@ -10,11 +10,11 @@ namespace CinemaManagementApp.Classes
 {
     internal class DataProcessor
     {
-        string sqlConnectStr = "Data Source=LAPTOP-CFGTBTO6\\SQLEXPRESS;Initial Catalog=DBCinemaManagement;User ID=sa;Password=sa;";
+        string sqlConnectStr = "Data Source=LAPTOP-\\SQLEXPRESS;Initial Catalog=DBCinemaManagement;User ID=sa;Password=";
         SqlConnection sqlConn = null;
 
         //PT mở kết nối
-        void OpenConncect()
+        void OpenConnect()
         {
             sqlConn = new SqlConnection(sqlConnectStr);
             if (sqlConn.State != ConnectionState.Open)
@@ -34,7 +34,7 @@ namespace CinemaManagementApp.Classes
         //PT thực hiện lệnh dạng insert, update, delete
         public void ChangeData(string sql)
         {
-            OpenConncect();
+            OpenConnect();
             SqlCommand sqlCmm = new SqlCommand();
             sqlCmm.Connection = sqlConn;
             sqlCmm.CommandText = sql;
@@ -47,11 +47,23 @@ namespace CinemaManagementApp.Classes
         public DataTable ReadData(string sqlSelect)
         {
             DataTable dt = new DataTable();
-            OpenConncect();
+            OpenConnect();
             SqlDataAdapter sqldata = new SqlDataAdapter(sqlSelect, sqlConn);
             sqldata.Fill(dt);
             CloseConnect();
             sqldata.Dispose();
+            return dt;
+        }
+
+        public SqlDataReader dataReader(string sql)
+        {
+            OpenConnect();
+            SqlCommand sqlcomma = new SqlCommand();
+            sqlcomma.Connection = sqlConn;
+            sqlcomma.CommandText = sql;
+            SqlDataReader dt = sqlcomma.ExecuteReader();
+            CloseConnect();
+            sqlcomma.Dispose();
             return dt;
         }
     }

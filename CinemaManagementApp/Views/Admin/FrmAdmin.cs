@@ -153,5 +153,5 @@ namespace CinemaManagementApp.Views.Admin
         {
 
         }
-	}
+    }
 }

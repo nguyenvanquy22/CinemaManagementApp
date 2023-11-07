@@ -33,17 +33,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.Words, Version=23.11.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.23.11.0\lib\net461\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Words.Pdf2Word, Version=23.11.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Words.23.11.0\lib\net461\Aspose.Words.Pdf2Word.dll</HintPath>
+    </Reference>
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -57,8 +59,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\DataProcessor.cs" />
-    <Compile Include="Classes\Functions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Child_Statistic\FrmIOcomeTotal.cs">
@@ -175,12 +175,84 @@
     <Compile Include="Views\Login\FrmLogin.Designer.cs">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Staff\ChildForm\Film.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\Film.Designer.cs">
+      <DependentUpon>Film.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmBill.Designer.cs">
+      <DependentUpon>FrmBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmFilmDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmFilmDetails.Designer.cs">
+      <DependentUpon>FrmFilmDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmFood.Designer.cs">
+      <DependentUpon>FrmFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmMovie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmMovie.Designer.cs">
+      <DependentUpon>FrmMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmOrder.Designer.cs">
+      <DependentUpon>FrmOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmOrderFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmOrderFood.Designer.cs">
+      <DependentUpon>FrmOrderFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmProblem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\FrmProblem.Designer.cs">
+      <DependentUpon>FrmProblem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\ChildForm\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Staff\FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Staff\FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Staff\FrmStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Staff\FrmStaff.Designer.cs">
       <DependentUpon>FrmStaff.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmCustomer.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmHistory.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmMovie.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmProblem.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmProduct.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmShow.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmStaff.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.Form_Child.FrmStatistic.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Admin.FrmAdmin.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Login.FrmLogin.resources" />
+    <EmbeddedResource Include="obj\Debug\CinemaManagementApp.Views.Staff.FrmStaff.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -244,9 +316,6 @@
     <EmbeddedResource Include="Views\Admin\FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Login\FrmLogin.resx">
-      <DependentUpon>FrmLogin.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -263,24 +332,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="bin\Debug\Images\FoodsPhotos\CocaCola.jpg" />
-    <Content Include="bin\Debug\Images\FoodsPhotos\FranchFry.jpg" />
-    <Content Include="bin\Debug\Images\FoodsPhotos\Lavie.jpg" />
-    <Content Include="bin\Debug\Images\FoodsPhotos\Pepsi.jpg" />
-    <Content Include="bin\Debug\Images\FoodsPhotos\Popcorn.jpg" />
-    <Content Include="bin\Debug\Images\FoodsPhotos\Sevenup.jpg" />
-    <Content Include="bin\Debug\Images\FoodsPhotos\Snack.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\Avatar.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\AvengersEndgame.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\Frozen.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\GodzillaVsKong.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\Inception.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\Interstellar.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\Joker.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\Parasite.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\PulpFiction.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\TheLordoftheRings.jpg" />
-    <Content Include="bin\Debug\Images\MoviePhotos\Titanic.jpg" />
+    <Folder Include="bin\Debug\Images\" />
+    <Folder Include="Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
