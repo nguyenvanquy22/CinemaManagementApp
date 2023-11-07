@@ -39,6 +39,7 @@
             this.IBtnShow = new FontAwesome.Sharp.IconButton();
             this.IBtnMovie = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.lblAdminName = new System.Windows.Forms.Label();
             this.iconAdminName = new FontAwesome.Sharp.IconPictureBox();
@@ -46,10 +47,14 @@
             this.iconCurrChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdminName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrChildForm)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -280,6 +285,7 @@
             // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.picLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
@@ -287,11 +293,20 @@
             this.panelLogo.Size = new System.Drawing.Size(220, 120);
             this.panelLogo.TabIndex = 0;
             // 
+            // picLogo
+            // 
+            this.picLogo.Image = global::CinemaManagementApp.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(220, 120);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 1;
+            this.picLogo.TabStop = false;
+            // 
             // panelTitle
             // 
             this.panelTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
-            this.panelTitle.Controls.Add(this.lblAdminName);
-            this.panelTitle.Controls.Add(this.iconAdminName);
+            this.panelTitle.Controls.Add(this.panel1);
             this.panelTitle.Controls.Add(this.lblTitleChildForm);
             this.panelTitle.Controls.Add(this.iconCurrChildForm);
             this.panelTitle.Dock = System.Windows.Forms.DockStyle.Top;
@@ -305,7 +320,7 @@
             this.lblAdminName.AutoSize = true;
             this.lblAdminName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAdminName.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblAdminName.Location = new System.Drawing.Point(788, 31);
+            this.lblAdminName.Location = new System.Drawing.Point(67, 29);
             this.lblAdminName.Name = "lblAdminName";
             this.lblAdminName.Size = new System.Drawing.Size(115, 20);
             this.lblAdminName.TabIndex = 3;
@@ -319,7 +334,7 @@
             this.iconAdminName.IconColor = System.Drawing.SystemColors.ButtonFace;
             this.iconAdminName.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconAdminName.IconSize = 40;
-            this.iconAdminName.Location = new System.Drawing.Point(742, 22);
+            this.iconAdminName.Location = new System.Drawing.Point(21, 19);
             this.iconAdminName.Name = "iconAdminName";
             this.iconAdminName.Size = new System.Drawing.Size(40, 40);
             this.iconAdminName.TabIndex = 2;
@@ -368,6 +383,16 @@
             this.panelDesktop.Size = new System.Drawing.Size(1014, 566);
             this.panelDesktop.TabIndex = 3;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblAdminName);
+            this.panel1.Controls.Add(this.iconAdminName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(753, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(261, 80);
+            this.panel1.TabIndex = 4;
+            // 
             // FrmAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -381,10 +406,14 @@
             this.Text = "FrmAdmin";
             this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdminName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrChildForm)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +438,7 @@
         private System.Windows.Forms.Panel panelDesktop;
         private FontAwesome.Sharp.IconPictureBox iconAdminName;
         private System.Windows.Forms.Label lblAdminName;
+        private System.Windows.Forms.PictureBox picLogo;
+        private System.Windows.Forms.Panel panel1;
     }
 }

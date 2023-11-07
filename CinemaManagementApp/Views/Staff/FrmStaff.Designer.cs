@@ -34,6 +34,7 @@
             this.IBtnProduct = new FontAwesome.Sharp.IconButton();
             this.IBtnMovie = new FontAwesome.Sharp.IconButton();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@
             this.iconCurrChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelTitle.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconUsername)).BeginInit();
@@ -158,11 +161,23 @@
             // 
             // panelLogo
             // 
+            this.panelLogo.Controls.Add(this.picLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(220, 120);
             this.panelLogo.TabIndex = 0;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.picLogo.Image = global::CinemaManagementApp.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(0, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(220, 120);
+            this.picLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
             // 
             // panelTitle
             // 
@@ -180,9 +195,9 @@
             this.panel2.Controls.Add(this.lblUsername);
             this.panel2.Controls.Add(this.iconUsername);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(814, 0);
+            this.panel2.Location = new System.Drawing.Point(766, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 80);
+            this.panel2.Size = new System.Drawing.Size(248, 80);
             this.panel2.TabIndex = 1;
             // 
             // lblUsername
@@ -269,6 +284,8 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmStaff_FormClosed);
             this.Load += new System.EventHandler(this.FrmStaff_Load);
             this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -296,5 +313,6 @@
 		private System.Windows.Forms.Label lblTitleChildForm;
 		private System.Windows.Forms.Label lblUsername;
 		private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.PictureBox picLogo;
     }
 }

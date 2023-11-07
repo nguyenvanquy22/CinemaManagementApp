@@ -276,6 +276,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Child_Statistic\FrmIOcomeTotal.resx">
       <DependentUpon>FrmIOcomeTotal.cs</DependentUpon>
@@ -343,6 +344,7 @@
     <None Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </None>
+    <None Include="bin\Debug\BillTemplate\BillTemplate.xlsx" />
     <None Include="bin\Debug\CinemaManagementApp.exe.config" />
     <None Include="obj\Debug\CinemaManagementApp.csproj.AssemblyReference.cache" />
     <None Include="obj\Debug\CinemaManagementApp.csproj.CopyComplete" />
@@ -379,6 +381,7 @@
     <Content Include="bin\Debug\Images\FoodsPhotos\Popcorn.jpg" />
     <Content Include="bin\Debug\Images\FoodsPhotos\Sevenup.jpg" />
     <Content Include="bin\Debug\Images\FoodsPhotos\Snack.jpg" />
+    <Content Include="bin\Debug\Images\logo.png" />
     <Content Include="bin\Debug\Images\MoviePhotos\Avatar.jpg" />
     <Content Include="bin\Debug\Images\MoviePhotos\AvengersEndgame.jpg" />
     <Content Include="bin\Debug\Images\MoviePhotos\Frozen.jpg" />
