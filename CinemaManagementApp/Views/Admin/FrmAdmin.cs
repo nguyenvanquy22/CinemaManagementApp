@@ -9,29 +9,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Media;
 using CinemaManagementApp.Views.Admin.Form_Child;
+using CinemaManagementApp.Views.Login;
 using FontAwesome.Sharp;
 using Color = System.Drawing.Color;
 
 namespace CinemaManagementApp.Views.Admin
 {
-
     public partial class FrmAdmin : Form
     {
         // Fields
         private IconButton currBtn;
         private Panel leftBorderBtn;
         private Form currChildForm;
-
+        FrmLogin frmLogin;
+        private string nameStaff;
         // Constructor
-        public FrmAdmin()
+        public FrmAdmin(FrmLogin frmLogin, string name)
         {
             InitializeComponent();
+            this.frmLogin = frmLogin;
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 50);
             panelMenu.Controls.Add(leftBorderBtn);
 
             ActivateButton(IBtnMovie, RGBColors.color1);
             OpenChildForm(new FrmMovie());
+            this.nameStaff = name;
         }
 
         // Struct color
@@ -151,7 +154,17 @@ namespace CinemaManagementApp.Views.Admin
 
         private void IBtnLogout_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Dispose();
+                this.frmLogin.Show();
+                this.Close();
+            }
+        }
 
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+            lblAdminName.Text = nameStaff;
         }
     }
 }

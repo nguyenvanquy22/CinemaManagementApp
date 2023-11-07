@@ -44,7 +44,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             string sql = "SELECT LichChieu.GioChieu, Phim.MaPhim FROM LichChieu "
                 + "JOIN Phim ON LichChieu.MaPhim = Phim.MaPhim "
                 + "where CONVERT(DATE, LichChieu.GioChieu) ='" + showtime + "'";
-            MessageBox.Show(showtime.ToString());
+            //MessageBox.Show(showtime.ToString());
             listFilm(sql);
             setListFilm();
         }

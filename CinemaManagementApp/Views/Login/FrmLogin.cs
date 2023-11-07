@@ -27,6 +27,7 @@ namespace CinemaManagementApp.Views.Login
 
 		public static string userName;
 		public static string staffID;
+		private string nameStaff = "";
 		Classes.DataProcessor db = new Classes.DataProcessor();
 		public FrmLogin()
         {
@@ -99,27 +100,26 @@ namespace CinemaManagementApp.Views.Login
 					string password = "";
 					// Nhân viên có chức vụ = 1; Quản lý có chức vụ = 2
 					string chucvu = "";
-					string sql = "select MaNV, MatKhau, ChucVu from NHANVIEN where TenDangNhap = '" + txtUsername.Text.Trim() + "'";
+					string sql = "select MaNV, TenNV, MatKhau, ChucVu from NHANVIEN where TenDangNhap = '" + txtUsername.Text.Trim() + "'";
 					DataTable dataTable = db.ReadData(sql);
 					if (dataTable.Rows.Count > 0)
 					{
 						password = dataTable.Rows[0]["MatKhau"].ToString();
-						chucvu = dataTable.Rows[0]["chucvu"].ToString();
+						chucvu = dataTable.Rows[0]["ChucVu"].ToString();
 					}
-					//Console.WriteLine(password);
-					//Console.WriteLine(chucvu);
 					if (txtPassword.Text.Trim().Equals(password))
 					{
                         // Form nhân viên
+						nameStaff = dataTable.Rows[0]["TenNV"].ToString();
                         staffID = dataTable.Rows[0]["MaNV"].ToString();
                         if (chucvu.Equals("Nhân viên"))
 						{
-							OpenNextForm(new FrmStaff());
+							OpenNextForm(new FrmStaff(this, nameStaff));
 						}
 						// Form admin
 						else 
 						{ 
-							OpenNextForm(new FrmAdmin()); 
+							OpenNextForm(new FrmAdmin(this, nameStaff)); 
 						}
 					}
 					else
@@ -135,7 +135,9 @@ namespace CinemaManagementApp.Views.Login
 		private void OpenNextForm(Form nextForm)
 		{
 			userName = txtUsername.Text;
+			txtPassword.Text = "";
 			nextForm.Show();
+			//timer.Dispose();
 			this.Hide();
 		}
 	}

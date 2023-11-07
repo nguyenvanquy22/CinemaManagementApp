@@ -3,7 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace CinemaManagementApp.Views.Staff.ChildForm
 {
@@ -183,7 +185,6 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             txtEmail.Enabled = false;
             txtPhoneNumber.Enabled = false;
             btnExportData.Enabled = true;
-
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -207,7 +208,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
 
         private void btnExportData_Click(object sender, EventArgs e)
         {
-            /*string sql = "select Hoadonban.MaHDB, Hoadonban.NgayXuatHD, Hoadonban.MaKH,\r\n\t\tCTHDB.MaSP, CTHDB.DonGia, CTHDB.SoLuong, SANPHAMKHAC.TenSP\r\n\t\tfrom HOADONBAN join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB\r\n\t\tjoin SANPHAMKHAC on CTHDB.MaSP = SANPHAMKHAC.MaSP\r\n\t\twhere HOADONBAN.MaHDB = '" + BillID + "'";
+            string sql = "select\tCTHDB.MaSP, CTHDB.DonGia, CTHDB.SoLuong, SANPHAMKHAC.TenSP\r\n\t\tfrom HOADONBAN join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB\r\n\t\tjoin SANPHAMKHAC on CTHDB.MaSP = SANPHAMKHAC.MaSP\r\n\t\twhere HOADONBAN.MaHDB = '" + BillID + "'";
             DataTable dataTable = db.ReadData(sql);
 
             string templateFilePath = "D:\\NguyenTienDat\\CinemaManagementApp\\CinemaManagementApp\\bin\\Debug\\BillTemplate\\BillTemplate.xlsx";
@@ -219,16 +220,17 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             // Mở file Excel template có sẵn
             Excel.Workbook templateWorkbook = excelApp.Workbooks.Open(templateFilePath);
 
-            // Tạo một bản sao của template bằng cách sử dụng SaveCopyAs
-            string copyPath = "D:\\NguyenTienDat";
-            templateWorkbook.SaveCopyAs(copyPath);
-
             // Mở bản sao
-            Excel.Workbook copyWorkbook = templateWorkbook.Copy();
+            Excel.Workbook copyWorkbook = excelApp.Workbooks.Add();
+
+            foreach (Excel.Worksheet templateWorksheet in templateWorkbook.Worksheets)
+            {
+                templateWorksheet.Copy(Before: copyWorkbook.Sheets[copyWorkbook.Sheets.Count]);
+            }
 
             // Lấy trang trong bản sao
             Excel.Worksheet worksheet = copyWorkbook.Sheets["Sales Invoice"];
-            
+
             // In ngày tạo hóa đơn
             worksheet.Cells[3, 8] = lblDate.Text;
             // In mã hóa đơn
@@ -244,10 +246,44 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             // In số điện thoại khách hàng
             worksheet.Cells[9, 3] = "SĐT: " + txtPhoneNumber.Text;
 
-            int i = 0;
+            // In thông tin đặt phim
+            // In tên phim
+            worksheet.Cells[13, 2] = lblFilmTitle.Text;
+            // In đơn giá
+            worksheet.Cells[13, 3] = lblPrice.Text;
+            // In ghế
+            worksheet.Cells[13, 4] = lblChairs.Text;
+            // In ngày chiếu
+            worksheet.Cells[13, 5] = lblDate.Text;
+            // In giờ chiếu
+            worksheet.Cells[13, 6] = lblTime.Text;
+            // In phòng chiếu
+            worksheet.Cells[13, 7] = lblRoom.Text;
+            // In tổng tiền phim
+            worksheet.Cells[13, 8] = lblPayFilm.Text;
+
+            int row = 0;
+            for(int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                // In tên sản phẩm
+                worksheet.Cells[16 + i, 2] = dataTable.Rows[i]["TenSP"].ToString();
+                // In số lượng
+                worksheet.Cells[16 + i, 3] = dataTable.Rows[i]["SoLuong"].ToString();
+                // In đơn giá
+                worksheet.Cells[16 + i, 4] = dataTable.Rows[i]["DonGia"].ToString();
+                // In tổng tiền đồ ăn
+                worksheet.Cells[16 + i, 5] = (float.Parse(dataTable.Rows[i]["SoLuong"].ToString()) * float.Parse(dataTable.Rows[i]["DonGia"].ToString())).ToString();
+
+                ++row;
+            }
 
             // In tổng giá trị hóa đơn
-            worksheet.Cells[18, 8] = lblTotal.Text;
+            Excel.Range cell = worksheet.Cells[19 + row, 7];
+            cell.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
+            worksheet.Cells[17 + row, 7] = "Tổng tiền:";
+            worksheet.Cells[17 + row, 8] = lblTotal.Text;
+            //worksheet.Cells[20 + dong, 2] = "Thank you for your business!";
+            
 
             // Sử dụng hộp thoại Lưu tệp để chọn nơi lưu tệp Excel mới
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -272,7 +308,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             Marshal.ReleaseComObject(worksheet);
             Marshal.ReleaseComObject(copyWorkbook);
             Marshal.ReleaseComObject(templateWorkbook);
-            Marshal.ReleaseComObject(excelApp);*/
+            Marshal.ReleaseComObject(excelApp);
 
             MessageBox.Show("Đã tạo hóa đơn", "Thông báo", MessageBoxButtons.OK);
             frmOrderFood.Close();

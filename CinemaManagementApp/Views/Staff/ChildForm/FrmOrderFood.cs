@@ -47,7 +47,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             for (int i = 0; i < listFoodID.Count; i++)
             {
                 PictureBox p = new PictureBox();
-                string relativeImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", "FoodPhotos");
+                string relativeImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", "FoodsPhotos");
                 string fullPathToImage = Path.Combine(relativeImagePath, dataTable.Rows[i]["Anh"].ToString());
                 p.ImageLocation = fullPathToImage;
                 p.SizeMode = PictureBoxSizeMode.StretchImage;
