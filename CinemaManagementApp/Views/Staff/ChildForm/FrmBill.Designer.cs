@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExportData = new System.Windows.Forms.Button();
             this.btnPay = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -85,7 +86,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.btnExportData = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -119,6 +119,23 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(308, 461);
             this.panel1.TabIndex = 0;
+            // 
+            // btnExportData
+            // 
+            this.btnExportData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnExportData.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnExportData.Enabled = false;
+            this.btnExportData.FlatAppearance.BorderSize = 0;
+            this.btnExportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportData.ForeColor = System.Drawing.Color.White;
+            this.btnExportData.Location = new System.Drawing.Point(6, 409);
+            this.btnExportData.Name = "btnExportData";
+            this.btnExportData.Size = new System.Drawing.Size(123, 38);
+            this.btnExportData.TabIndex = 10;
+            this.btnExportData.Text = "Xuất hóa đơn";
+            this.btnExportData.UseVisualStyleBackColor = false;
+            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
             // 
             // btnPay
             // 
@@ -269,6 +286,7 @@
             // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 30);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -675,23 +693,6 @@
             this.iconButton1.TabIndex = 3;
             this.iconButton1.UseVisualStyleBackColor = false;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
-            // btnExportData
-            // 
-            this.btnExportData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnExportData.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnExportData.Enabled = false;
-            this.btnExportData.FlatAppearance.BorderSize = 0;
-            this.btnExportData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportData.ForeColor = System.Drawing.Color.White;
-            this.btnExportData.Location = new System.Drawing.Point(6, 409);
-            this.btnExportData.Name = "btnExportData";
-            this.btnExportData.Size = new System.Drawing.Size(123, 38);
-            this.btnExportData.TabIndex = 10;
-            this.btnExportData.Text = "Xuất hóa đơn";
-            this.btnExportData.UseVisualStyleBackColor = false;
-            this.btnExportData.Click += new System.EventHandler(this.btnExportData_Click);
             // 
             // FrmBill
             // 

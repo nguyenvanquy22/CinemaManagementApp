@@ -22,11 +22,15 @@ namespace CinemaManagementApp.Views.Staff
 		private Panel leftBorderBtn;
 		private Form currChildForm;
         List<string> emptyList = new List<string>();
+		FrmLogin frmLogin;
+		private string nameStaff;
 
         // Constructor
-        public FrmStaff()
+        public FrmStaff(FrmLogin frmLogin, string name)
         {
             InitializeComponent();
+			this.nameStaff = name;
+			this.frmLogin = frmLogin;
 			leftBorderBtn = new Panel();
 			leftBorderBtn.Size = new Size(7, 50);
 			panelMenu.Controls.Add(leftBorderBtn);
@@ -34,7 +38,7 @@ namespace CinemaManagementApp.Views.Staff
 
 		private void FrmStaff_Load(object sender, EventArgs e)
 		{
-			lblUsername.Text = FrmLogin.userName;
+			lblUsername.Text = this.nameStaff;
 		}
 
 		// Struct color
@@ -131,6 +135,7 @@ namespace CinemaManagementApp.Views.Staff
 			if (MessageBox.Show("Bạn có muốn đăng xuất không?","Thông báo!",MessageBoxButtons.YesNo) == DialogResult.Yes) 
 			{
 				this.Dispose();
+				this.frmLogin.Show();
 				this.Close();
 			}
 		}
