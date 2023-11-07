@@ -211,7 +211,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             string sql = "select\tCTHDB.MaSP, CTHDB.DonGia, CTHDB.SoLuong, SANPHAMKHAC.TenSP\r\n\t\tfrom HOADONBAN join CTHDB on HOADONBAN.MaHDB = CTHDB.MaHDB\r\n\t\tjoin SANPHAMKHAC on CTHDB.MaSP = SANPHAMKHAC.MaSP\r\n\t\twhere HOADONBAN.MaHDB = '" + BillID + "'";
             DataTable dataTable = db.ReadData(sql);
 
-            string templateFilePath = "D:\\NguyenTienDat\\CinemaManagementApp\\CinemaManagementApp\\bin\\Debug\\BillTemplate\\BillTemplate.xlsx";
+            string templateFilePath = Application.StartupPath + "\\BillTemplate\\BillTemplate.xlsx";
 
             // Khởi tạo một ứng dụng Excel
             Excel.Application excelApp = new Excel.Application();
