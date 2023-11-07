@@ -49,7 +49,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             DataTable dataTable = db.ReadData(sql);
             lblFilmTitle.Text = dataTable.Rows[0]["TenPhim"].ToString();
             DateTime showtime = (DateTime)(dataTable.Rows[0]["GioChieu"]);
-            lblDate.Text = showtime.Date.ToString();
+            lblDate.Text = showtime.ToString("yyyy-MM-dd");
             lblTime.Text = showtime.Hour + ":" + showtime.Minute + ":" + showtime.Second;
             lblRoom.Text = dataTable.Rows[0]["MaPhong"].ToString();
             lblPrice.Text = dataTable.Rows[0]["GiaVe"].ToString();

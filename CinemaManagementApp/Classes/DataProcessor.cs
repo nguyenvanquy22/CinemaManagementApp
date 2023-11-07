@@ -10,7 +10,7 @@ namespace CinemaManagementApp.Classes
 {
     internal class DataProcessor
     {
-        string sqlConnectStr = "Data Source=DESKTOP-N1I5QPD\\MSSQLSERVER03;Initial Catalog=DBCinemaManagement;User ID=sa; password=sa";
+        string sqlConnectStr = "Data Source=LAPTOP-CFGTBTO6\\SQLEXPRESS;Initial Catalog=DBCinemaManagement;User ID=sa; password=sa";
         SqlConnection sqlConn = null;
 
         //PT mở kết nối

@@ -39,7 +39,10 @@ namespace CinemaManagementApp.Views.Staff
 		private void FrmStaff_Load(object sender, EventArgs e)
 		{
 			lblUsername.Text = this.nameStaff;
-		}
+
+            ActivateButton(IBtnMovie, RGBColors.color1);
+            OpenChildForm(new FrmMovie());
+        }
 
 		// Struct color
 		private struct RGBColors

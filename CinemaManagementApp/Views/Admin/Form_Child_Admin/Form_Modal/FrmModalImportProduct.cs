@@ -1,4 +1,5 @@
 ﻿using CinemaManagementApp.Classes;
+using CinemaManagementApp.Views.Login;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,7 +54,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal
             string mahdn = ft.SinhMaTuDong("HOADONNHAP", "MaHDN", "HDN00");
             sql = "INSERT INTO HOADONNHAP(MaHDN, NgayNhapHD, MaNV, MaNCC) VALUES(";
             sql += "'" + mahdn + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '"
-                + "NV001" + "','" + "NCC001" + "')"; 
+                + FrmLogin.staffID + "','" + "NCC001" + "')"; 
             dt.ChangeData (sql);
 
             // add cthdn

@@ -20,7 +20,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
         private string FilmTitle;
         private string Category;
         //private string sql;
-        private DateTime showtime;
+        private string showtime;
         
 
         DataProcessor db = new DataProcessor();
@@ -29,7 +29,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
         public FrmMovie()
 		{
 			InitializeComponent();
-            showtime = dTPShowtime.Value.Date;
+            showtime = dTPShowtime.Value.Date.ToString("yyyy-MM-dd");
         }
 
         private void FrmMovie_Load(object sender, EventArgs e)
@@ -44,7 +44,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             string sql = "SELECT LichChieu.GioChieu, Phim.MaPhim FROM LichChieu "
                 + "JOIN Phim ON LichChieu.MaPhim = Phim.MaPhim "
                 + "where CONVERT(DATE, LichChieu.GioChieu) ='" + showtime + "'";
-            MessageBox.Show(sql);
+            //MessageBox.Show(sql);
             listFilm(sql);
             setListFilm();
         }
@@ -84,7 +84,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             for (int i = currentFilmIndex; i < listFilmID.Count; i++)
             {
                 string filmID = listFilmID[currentFilmIndex];
-                f = new Film(filmID, showtime.ToString("yyyy-MM-dd"));
+                f = new Film(filmID, showtime);
                 f.TopLevel = false;
                 f.FormBorderStyle = FormBorderStyle.None;
                 f.Dock = DockStyle.Fill;
@@ -141,7 +141,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
 
         private void dTPShowtime_ValueChanged(object sender, EventArgs e)
         {
-            showtime = dTPShowtime.Value;
+            showtime = dTPShowtime.Value.Date.ToString("yyyy-MM-dd");
             //MessageBox.Show(showtime.ToString(), "Số phim", MessageBoxButtons.OK);
             string sql = "SELECT LichChieu.GioChieu, Phim.MaPhim FROM LichChieu "
                 + "JOIN Phim ON LichChieu.MaPhim = Phim.MaPhim "

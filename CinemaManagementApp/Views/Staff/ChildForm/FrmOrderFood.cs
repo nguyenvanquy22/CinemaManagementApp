@@ -29,6 +29,11 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
 
         private void FrmOrderFood_Load(object sender, EventArgs e)
         {
+            if(this.orders.Count == 0)
+            {
+                panel1.Visible = false;
+            }
+
             showProducts();
             /*groupBox1.Height = flowLayoutPanel1.Height * 3 / 4;*/
         }
@@ -109,7 +114,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
 
                 p.Controls.Add(p1);
                 p.Controls.Add(p2);
-                p.Size = new Size(200, 350);
+                p.Size = new Size(200, 250);
                 p.BorderStyle = BorderStyle.Fixed3D;
                 //p.Dock = DockStyle.Fill;
                 flowLayoutPanel1.Controls.Add(p);
