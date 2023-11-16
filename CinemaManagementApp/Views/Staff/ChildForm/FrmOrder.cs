@@ -29,6 +29,12 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             // Select số ghê
             string sql = "select LICHCHIEU.MaPhong, LICHCHIEU.GiaVe, LICHCHIEU.GioChieu, LICHCHIEU.MaPhim, HANG.ThuTuHang ,HANG.SLGhe\r\nfrom LICHCHIEU\r\njoin HANG on HANG.MaPhong = LICHCHIEU.MaPhong\r\nwhere LICHCHIEU.MaLC = '"+ showtimeID + "'";
             DataTable dataTable = db.ReadData(sql);
+            if (dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Phòng chiếu chưa được chuẩn bị", "Thông báo", MessageBoxButtons.OK);
+                this.Close();
+                return;
+            }
             int maxcol = 0;
             int sumChair = 0;
             price = float.Parse(dataTable.Rows[0]["GiaVe"].ToString());
