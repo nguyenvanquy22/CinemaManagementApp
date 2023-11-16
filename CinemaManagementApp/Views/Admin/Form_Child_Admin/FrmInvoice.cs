@@ -42,11 +42,12 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 	                    inner join cthdb on cthdb.mahdb = hoadonban.mahdb
 	                    inner join ve on ve.mahdb = hoadonban.mahdb
 	                    inner join lichchieu on lichchieu.malc = ve.malc";
+            sql += " WHERE hoadonban.ngayxuathd = '" + dtpDate.Value.ToString("yyyy-MM-dd") + "'";
             if (isBtnSearchClick)
             {
-                sql += " WHERE hoadonban.mahdb is not null and hoadonban.mahdb like '%" + txtSearch.Text + "%'";
+                sql += " and hoadonban.mahdb is not null and hoadonban.mahdb like '%" + txtSearch.Text + "%'";
             }
-             sql += @" group by hoadonban.mahdb, hoadonban.ngayxuathd,nhanvien.TenNV, khachhang.TenKH, khachhang.sdt
+            sql += @" group by hoadonban.mahdb, hoadonban.ngayxuathd,nhanvien.TenNV, khachhang.TenKH, khachhang.sdt
                     order by hoadonban.ngayxuathd desc;";
                 
 
@@ -68,9 +69,10 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
 	                    inner join nhanvien on nhanvien.manv = hoadonnhap.manv
 	                    inner join cthdn on cthdn.mahdn = hoadonnhap.mahdn
 	                    inner join sanphamkhac on sanphamkhac.masp = cthdn.masp";
+            sql += " Where hoadonnhap.ngaynhaphd = '" + dtpDate.Value.ToString("yyyy-MM-dd") +"'";
             if (isBtnSearchClick)
             {
-                sql += " WHERE hoadonnhap.mahdn is not null and hoadonnhap.mahdn like '%" + txtSearch.Text + "%'";
+                sql += " and hoadonnhap.mahdn is not null and hoadonnhap.mahdn like '%" + txtSearch.Text + "%'";
             }
             sql += @" group by hoadonnhap.mahdn, hoadonnhap.ngaynhaphd, nhanvien.tennv, nhacungcap.tenncc, nhacungcap.sdt
                     order by hoadonnhap.ngaynhaphd desc;";
@@ -203,6 +205,18 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
                         e.FormattingApplied = true;
                     }
                 }
+            }
+        }
+
+        private void dtpDate_ValueChanged(object sender, EventArgs e)
+        {
+            if (outcomeInvoice)
+            {
+                GetListOutComeInvoice();
+            }
+            else
+            {
+                GetListInComeInvoice();
             }
         }
     }

@@ -28,20 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.dgvTopStaffs = new System.Windows.Forms.DataGridView();
-            this.panelStaffChart = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.chartStaff = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panelTimeStaffFilter = new System.Windows.Forms.Panel();
-            this.cbStaffTimeMonth = new System.Windows.Forms.ComboBox();
-            this.cbStaffTimeYear = new System.Windows.Forms.ComboBox();
-            this.cbStaffPeriod = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dgvTopCustomers = new System.Windows.Forms.DataGridView();
             this.chartCustomer = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelTimeCustomerFilter = new System.Windows.Forms.Panel();
@@ -52,122 +44,31 @@
             this.cbMovieTimeMonth = new System.Windows.Forms.ComboBox();
             this.cbMovieTimeYear = new System.Windows.Forms.ComboBox();
             this.cbMoviePeriod = new System.Windows.Forms.ComboBox();
-            this.panelStaffRatings = new System.Windows.Forms.Panel();
-            this.splitter1 = new System.Windows.Forms.Splitter();
             this.panelCustomerRatings = new System.Windows.Forms.Panel();
             this.panelCustomerChart = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTopStaffs)).BeginInit();
-            this.panelStaffChart.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStaff)).BeginInit();
-            this.panelTimeStaffFilter.SuspendLayout();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.panelStaffRatings = new System.Windows.Forms.Panel();
+            this.panelStaffChart = new System.Windows.Forms.Panel();
+            this.dgvTopStaffs = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.chartStaff = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelTimeStaffFilter = new System.Windows.Forms.Panel();
+            this.cbStaffTimeMonth = new System.Windows.Forms.ComboBox();
+            this.cbStaffTimeYear = new System.Windows.Forms.ComboBox();
+            this.cbStaffPeriod = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomer)).BeginInit();
             this.panelTimeCustomerFilter.SuspendLayout();
             this.panelProductFilter.SuspendLayout();
-            this.panelStaffRatings.SuspendLayout();
             this.panelCustomerRatings.SuspendLayout();
             this.panelCustomerChart.SuspendLayout();
+            this.panelStaffRatings.SuspendLayout();
+            this.panelStaffChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTopStaffs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStaff)).BeginInit();
+            this.panelTimeStaffFilter.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dgvTopStaffs
-            // 
-            this.dgvTopStaffs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvTopStaffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTopStaffs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTopStaffs.Location = new System.Drawing.Point(0, 261);
-            this.dgvTopStaffs.Name = "dgvTopStaffs";
-            this.dgvTopStaffs.RowHeadersWidth = 51;
-            this.dgvTopStaffs.RowTemplate.Height = 24;
-            this.dgvTopStaffs.Size = new System.Drawing.Size(483, 264);
-            this.dgvTopStaffs.TabIndex = 4;
-            this.dgvTopStaffs.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTopStaffs_CellFormatting);
-            // 
-            // panelStaffChart
-            // 
-            this.panelStaffChart.Controls.Add(this.dgvTopStaffs);
-            this.panelStaffChart.Controls.Add(this.label1);
-            this.panelStaffChart.Controls.Add(this.chartStaff);
-            this.panelStaffChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStaffChart.Location = new System.Drawing.Point(0, 64);
-            this.panelStaffChart.Name = "panelStaffChart";
-            this.panelStaffChart.Size = new System.Drawing.Size(483, 525);
-            this.panelStaffChart.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 218);
-            this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(4, 10, 4, 4);
-            this.label1.Size = new System.Drawing.Size(452, 43);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Top 5 nhân viên đóng góp nhiều nhất";
-            // 
-            // chartStaff
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartStaff.ChartAreas.Add(chartArea1);
-            this.chartStaff.Dock = System.Windows.Forms.DockStyle.Top;
-            legend1.Name = "Legend1";
-            this.chartStaff.Legends.Add(legend1);
-            this.chartStaff.Location = new System.Drawing.Point(0, 0);
-            this.chartStaff.Name = "chartStaff";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series1.Legend = "Legend1";
-            series1.Name = "TopStaff";
-            this.chartStaff.Series.Add(series1);
-            this.chartStaff.Size = new System.Drawing.Size(483, 218);
-            this.chartStaff.TabIndex = 2;
-            this.chartStaff.Text = "chart1";
-            // 
-            // panelTimeStaffFilter
-            // 
-            this.panelTimeStaffFilter.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelTimeStaffFilter.Controls.Add(this.cbStaffTimeMonth);
-            this.panelTimeStaffFilter.Controls.Add(this.cbStaffTimeYear);
-            this.panelTimeStaffFilter.Controls.Add(this.cbStaffPeriod);
-            this.panelTimeStaffFilter.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTimeStaffFilter.Location = new System.Drawing.Point(0, 0);
-            this.panelTimeStaffFilter.Name = "panelTimeStaffFilter";
-            this.panelTimeStaffFilter.Size = new System.Drawing.Size(483, 64);
-            this.panelTimeStaffFilter.TabIndex = 2;
-            // 
-            // cbStaffTimeMonth
-            // 
-            this.cbStaffTimeMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStaffTimeMonth.FormattingEnabled = true;
-            this.cbStaffTimeMonth.Location = new System.Drawing.Point(261, 19);
-            this.cbStaffTimeMonth.Name = "cbStaffTimeMonth";
-            this.cbStaffTimeMonth.Size = new System.Drawing.Size(80, 28);
-            this.cbStaffTimeMonth.TabIndex = 14;
-            this.cbStaffTimeMonth.SelectedIndexChanged += new System.EventHandler(this.cbStaffTimeMonth_SelectedIndexChanged);
-            // 
-            // cbStaffTimeYear
-            // 
-            this.cbStaffTimeYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStaffTimeYear.FormattingEnabled = true;
-            this.cbStaffTimeYear.Location = new System.Drawing.Point(158, 19);
-            this.cbStaffTimeYear.Name = "cbStaffTimeYear";
-            this.cbStaffTimeYear.Size = new System.Drawing.Size(80, 28);
-            this.cbStaffTimeYear.TabIndex = 13;
-            this.cbStaffTimeYear.SelectedIndexChanged += new System.EventHandler(this.cbStaffTimeYear_SelectedIndexChanged);
-            // 
-            // cbStaffPeriod
-            // 
-            this.cbStaffPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStaffPeriod.FormattingEnabled = true;
-            this.cbStaffPeriod.Items.AddRange(new object[] {
-            "Năm",
-            "Tháng"});
-            this.cbStaffPeriod.Location = new System.Drawing.Point(19, 19);
-            this.cbStaffPeriod.Name = "cbStaffPeriod";
-            this.cbStaffPeriod.Size = new System.Drawing.Size(114, 28);
-            this.cbStaffPeriod.TabIndex = 12;
-            this.cbStaffPeriod.SelectedIndexChanged += new System.EventHandler(this.cbStaffPeriod_SelectedIndexChanged);
             // 
             // dgvTopCustomers
             // 
@@ -184,18 +85,18 @@
             // 
             // chartCustomer
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartCustomer.ChartAreas.Add(chartArea2);
+            chartArea9.Name = "ChartArea1";
+            this.chartCustomer.ChartAreas.Add(chartArea9);
             this.chartCustomer.Dock = System.Windows.Forms.DockStyle.Top;
-            legend2.Name = "Legend1";
-            this.chartCustomer.Legends.Add(legend2);
+            legend9.Name = "Legend1";
+            this.chartCustomer.Legends.Add(legend9);
             this.chartCustomer.Location = new System.Drawing.Point(0, 0);
             this.chartCustomer.Name = "chartCustomer";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series2.Legend = "Legend1";
-            series2.Name = "Top1Cust";
-            this.chartCustomer.Series.Add(series2);
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series9.Legend = "Legend1";
+            series9.Name = "Top1Cust";
+            this.chartCustomer.Series.Add(series9);
             this.chartCustomer.Size = new System.Drawing.Size(489, 218);
             this.chartCustomer.TabIndex = 2;
             this.chartCustomer.Text = "chart2";
@@ -288,24 +189,6 @@
             this.cbMoviePeriod.Size = new System.Drawing.Size(114, 28);
             this.cbMoviePeriod.TabIndex = 13;
             // 
-            // panelStaffRatings
-            // 
-            this.panelStaffRatings.Controls.Add(this.panelStaffChart);
-            this.panelStaffRatings.Controls.Add(this.panelTimeStaffFilter);
-            this.panelStaffRatings.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelStaffRatings.Location = new System.Drawing.Point(499, 0);
-            this.panelStaffRatings.Name = "panelStaffRatings";
-            this.panelStaffRatings.Size = new System.Drawing.Size(483, 589);
-            this.panelStaffRatings.TabIndex = 5;
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(489, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(10, 589);
-            this.splitter1.TabIndex = 4;
-            this.splitter1.TabStop = false;
-            // 
             // panelCustomerRatings
             // 
             this.panelCustomerRatings.Controls.Add(this.panelCustomerChart);
@@ -339,6 +222,124 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Top 5 khách hàng chi tiêu nhiều nhất";
             // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(489, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(10, 589);
+            this.splitter1.TabIndex = 4;
+            this.splitter1.TabStop = false;
+            // 
+            // panelStaffRatings
+            // 
+            this.panelStaffRatings.Controls.Add(this.panelStaffChart);
+            this.panelStaffRatings.Controls.Add(this.panelTimeStaffFilter);
+            this.panelStaffRatings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStaffRatings.Location = new System.Drawing.Point(499, 0);
+            this.panelStaffRatings.Name = "panelStaffRatings";
+            this.panelStaffRatings.Size = new System.Drawing.Size(483, 589);
+            this.panelStaffRatings.TabIndex = 6;
+            // 
+            // panelStaffChart
+            // 
+            this.panelStaffChart.Controls.Add(this.dgvTopStaffs);
+            this.panelStaffChart.Controls.Add(this.label1);
+            this.panelStaffChart.Controls.Add(this.chartStaff);
+            this.panelStaffChart.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelStaffChart.Location = new System.Drawing.Point(0, 64);
+            this.panelStaffChart.Name = "panelStaffChart";
+            this.panelStaffChart.Size = new System.Drawing.Size(483, 525);
+            this.panelStaffChart.TabIndex = 3;
+            // 
+            // dgvTopStaffs
+            // 
+            this.dgvTopStaffs.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTopStaffs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTopStaffs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTopStaffs.Location = new System.Drawing.Point(0, 261);
+            this.dgvTopStaffs.Name = "dgvTopStaffs";
+            this.dgvTopStaffs.RowHeadersWidth = 51;
+            this.dgvTopStaffs.RowTemplate.Height = 24;
+            this.dgvTopStaffs.Size = new System.Drawing.Size(483, 264);
+            this.dgvTopStaffs.TabIndex = 4;
+            this.dgvTopStaffs.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTopStaffs_CellFormatting);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 218);
+            this.label1.Name = "label1";
+            this.label1.Padding = new System.Windows.Forms.Padding(4, 10, 4, 4);
+            this.label1.Size = new System.Drawing.Size(452, 43);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Top 5 nhân viên đóng góp nhiều nhất";
+            // 
+            // chartStaff
+            // 
+            chartArea10.Name = "ChartArea1";
+            this.chartStaff.ChartAreas.Add(chartArea10);
+            this.chartStaff.Dock = System.Windows.Forms.DockStyle.Top;
+            legend10.Name = "Legend1";
+            this.chartStaff.Legends.Add(legend10);
+            this.chartStaff.Location = new System.Drawing.Point(0, 0);
+            this.chartStaff.Name = "chartStaff";
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series10.Legend = "Legend1";
+            series10.Name = "TopStaff";
+            this.chartStaff.Series.Add(series10);
+            this.chartStaff.Size = new System.Drawing.Size(483, 218);
+            this.chartStaff.TabIndex = 2;
+            this.chartStaff.Text = "chart1";
+            // 
+            // panelTimeStaffFilter
+            // 
+            this.panelTimeStaffFilter.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelTimeStaffFilter.Controls.Add(this.cbStaffTimeMonth);
+            this.panelTimeStaffFilter.Controls.Add(this.cbStaffTimeYear);
+            this.panelTimeStaffFilter.Controls.Add(this.cbStaffPeriod);
+            this.panelTimeStaffFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTimeStaffFilter.Location = new System.Drawing.Point(0, 0);
+            this.panelTimeStaffFilter.Name = "panelTimeStaffFilter";
+            this.panelTimeStaffFilter.Size = new System.Drawing.Size(483, 64);
+            this.panelTimeStaffFilter.TabIndex = 2;
+            // 
+            // cbStaffTimeMonth
+            // 
+            this.cbStaffTimeMonth.Enabled = false;
+            this.cbStaffTimeMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStaffTimeMonth.FormattingEnabled = true;
+            this.cbStaffTimeMonth.Location = new System.Drawing.Point(261, 19);
+            this.cbStaffTimeMonth.Name = "cbStaffTimeMonth";
+            this.cbStaffTimeMonth.Size = new System.Drawing.Size(80, 28);
+            this.cbStaffTimeMonth.TabIndex = 14;
+            this.cbStaffTimeMonth.SelectedIndexChanged += new System.EventHandler(this.cbStaffTimeMonth_SelectedIndexChanged);
+            // 
+            // cbStaffTimeYear
+            // 
+            this.cbStaffTimeYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStaffTimeYear.FormattingEnabled = true;
+            this.cbStaffTimeYear.Location = new System.Drawing.Point(158, 19);
+            this.cbStaffTimeYear.Name = "cbStaffTimeYear";
+            this.cbStaffTimeYear.Size = new System.Drawing.Size(80, 28);
+            this.cbStaffTimeYear.TabIndex = 13;
+            this.cbStaffTimeYear.SelectedIndexChanged += new System.EventHandler(this.cbStaffTimeYear_SelectedIndexChanged);
+            // 
+            // cbStaffPeriod
+            // 
+            this.cbStaffPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStaffPeriod.FormattingEnabled = true;
+            this.cbStaffPeriod.Items.AddRange(new object[] {
+            "Năm",
+            "Tháng"});
+            this.cbStaffPeriod.Location = new System.Drawing.Point(19, 19);
+            this.cbStaffPeriod.Name = "cbStaffPeriod";
+            this.cbStaffPeriod.Size = new System.Drawing.Size(114, 28);
+            this.cbStaffPeriod.TabIndex = 12;
+            this.cbStaffPeriod.SelectedIndexChanged += new System.EventHandler(this.cbStaffPeriod_SelectedIndexChanged);
+            // 
             // FrmRatings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -350,38 +351,30 @@
             this.Name = "FrmRatings";
             this.Text = "Bảng xếp hạng";
             this.Load += new System.EventHandler(this.FrmRatings_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTopStaffs)).EndInit();
-            this.panelStaffChart.ResumeLayout(false);
-            this.panelStaffChart.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartStaff)).EndInit();
-            this.panelTimeStaffFilter.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomer)).EndInit();
             this.panelTimeCustomerFilter.ResumeLayout(false);
             this.panelProductFilter.ResumeLayout(false);
-            this.panelStaffRatings.ResumeLayout(false);
             this.panelCustomerRatings.ResumeLayout(false);
             this.panelCustomerChart.ResumeLayout(false);
             this.panelCustomerChart.PerformLayout();
+            this.panelStaffRatings.ResumeLayout(false);
+            this.panelStaffChart.ResumeLayout(false);
+            this.panelStaffChart.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTopStaffs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartStaff)).EndInit();
+            this.panelTimeStaffFilter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
 		#endregion
-
-		private System.Windows.Forms.DataGridView dgvTopStaffs;
-		private System.Windows.Forms.Panel panelStaffChart;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Panel panelTimeStaffFilter;
 		private System.Windows.Forms.DataGridView dgvTopCustomers;
 		private System.Windows.Forms.DataVisualization.Charting.Chart chartCustomer;
 		private System.Windows.Forms.Panel panelTimeCustomerFilter;
-		private System.Windows.Forms.Panel panelStaffRatings;
-		private System.Windows.Forms.Splitter splitter1;
 		private System.Windows.Forms.Panel panelCustomerRatings;
 		private System.Windows.Forms.Panel panelCustomerChart;
 		private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartStaff;
         private System.Windows.Forms.Panel panelProductFilter;
         private System.Windows.Forms.ComboBox cbCustTimeMonth;
         private System.Windows.Forms.ComboBox cbCustTimeYear;
@@ -389,6 +382,13 @@
         private System.Windows.Forms.ComboBox cbMovieTimeMonth;
         private System.Windows.Forms.ComboBox cbMovieTimeYear;
         private System.Windows.Forms.ComboBox cbMoviePeriod;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Panel panelStaffRatings;
+        private System.Windows.Forms.Panel panelStaffChart;
+        private System.Windows.Forms.DataGridView dgvTopStaffs;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartStaff;
+        private System.Windows.Forms.Panel panelTimeStaffFilter;
         private System.Windows.Forms.ComboBox cbStaffTimeMonth;
         private System.Windows.Forms.ComboBox cbStaffTimeYear;
         private System.Windows.Forms.ComboBox cbStaffPeriod;

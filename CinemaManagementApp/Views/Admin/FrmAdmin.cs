@@ -166,5 +166,10 @@ namespace CinemaManagementApp.Views.Admin
         {
             lblAdminName.Text = nameStaff;
         }
+
+        private void FrmAdmin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

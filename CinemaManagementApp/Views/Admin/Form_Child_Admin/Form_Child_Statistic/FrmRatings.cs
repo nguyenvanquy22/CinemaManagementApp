@@ -34,13 +34,15 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 ";
             DataTable minYearTable = dtbase.ReadData(sql);
             int minYear = int.Parse(minYearTable.Rows[0][0].ToString());
+            int countYearItems = -1;
             for (int i = minYear; i <= DateTime.Now.Year; i++)
             {
                 cbCustTimeYear.Items.Add(i.ToString());
                 cbStaffTimeYear.Items.Add(i.ToString());
+                countYearItems++;
             }
-            cbCustTimeYear.SelectedIndex = 0;
-            cbStaffTimeYear.SelectedIndex = 0;
+            cbCustTimeYear.SelectedIndex = countYearItems;
+            cbStaffTimeYear.SelectedIndex = countYearItems;
 
             for (int i = 1; i <= 12; i++)
             {
@@ -204,6 +206,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             }
             statisticStaff(cbStaffPeriod.Text);
         }
+
         private void cbStaffTimeYear_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbStaffPeriod.Text == "Năm")
@@ -215,6 +218,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 statisticStaff("Tháng");
             }
         }
+
         private void cbStaffTimeMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             statisticStaff("Tháng");

@@ -35,13 +35,15 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 ";
             DataTable minYearTable = dtbase.ReadData(sql);
             int minYear = int.Parse(minYearTable.Rows[0][0].ToString());
+            int countYearItems = -1;
             for (int i = minYear; i <= DateTime.Now.Year; i++)
             {
                 cbMovieTimeYear.Items.Add(i.ToString());
                 cbProdTimeYear.Items.Add(i.ToString());
+                countYearItems++;
             }
-            cbMovieTimeYear.SelectedIndex = 0;
-            cbProdTimeYear.SelectedIndex = 0;
+            cbMovieTimeYear.SelectedIndex = countYearItems;
+            cbProdTimeYear.SelectedIndex = countYearItems;
 
             for (int i = 1; i <= 12; i++)
             {
@@ -200,6 +202,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             }
             statisticProduct(cbProdPeriod.Text);
         }
+
         private void cbProdTimeYear_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbProdPeriod.Text == "Năm")
@@ -211,6 +214,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 statisticProduct("Tháng");
             }
         }
+
         private void cbProdTimeMonth_SelectedIndexChanged(object sender, EventArgs e)
         {
             statisticProduct("Tháng");

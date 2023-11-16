@@ -1,4 +1,5 @@
 ﻿using CinemaManagementApp.Classes;
+using CinemaManagementApp.Views.Login;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -141,7 +142,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             BillID = new Classes.Functions().SinhMaTuDong("HOADONBAN", "MaHDB", "HDB1");
             sql = "Insert into HoaDonBan Values('" + BillID + "',"
                 + "'" + now.ToString("yyyy-MM-dd") + "',"
-                + "'" + "NV001" + "',"
+                + "'" + FrmLogin.staffID + "',"
                 + "'" + customerID + "')";
             db.ChangeData(sql);
 
@@ -203,7 +204,9 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
 
         private void FrmBill_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            frmOrderFood.Close();
+            FrmOrder.Close();
+            this.Close();
         }
 
         private void btnExportData_Click(object sender, EventArgs e)
@@ -231,8 +234,10 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             // Lấy trang trong bản sao
             Excel.Worksheet worksheet = copyWorkbook.Sheets["Sales Invoice"];
 
+            DateTime now = DateTime.Now;
+
             // In ngày tạo hóa đơn
-            worksheet.Cells[3, 8] = lblDate.Text;
+            worksheet.Cells[3, 8] = now.Date.ToString("yyyy-MM-dd");
             // In mã hóa đơn
             worksheet.Cells[4, 8] = BillID;
             // In mã khách hàng
@@ -278,7 +283,7 @@ namespace CinemaManagementApp.Views.Staff.ChildForm
             }
 
             // In tổng giá trị hóa đơn
-            Excel.Range cell = worksheet.Cells[19 + row, 7];
+            Excel.Range cell = worksheet.Cells[17 + row, 7];
             cell.HorizontalAlignment = Excel.XlHAlign.xlHAlignRight;
             worksheet.Cells[17 + row, 7] = "Tổng tiền:";
             worksheet.Cells[17 + row, 8] = lblTotal.Text;

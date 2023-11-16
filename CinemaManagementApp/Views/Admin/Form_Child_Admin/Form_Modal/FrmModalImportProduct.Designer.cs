@@ -38,6 +38,8 @@
             this.picSP = new FontAwesome.Sharp.IconPictureBox();
             this.btnHuy = new FontAwesome.Sharp.IconButton();
             this.btnLuu = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbNCC = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.picSP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             // txtGiaTien
             // 
             this.txtGiaTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGiaTien.Location = new System.Drawing.Point(115, 187);
+            this.txtGiaTien.Location = new System.Drawing.Point(115, 223);
             this.txtGiaTien.Name = "txtGiaTien";
             this.txtGiaTien.Size = new System.Drawing.Size(148, 27);
             this.txtGiaTien.TabIndex = 19;
@@ -73,7 +75,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 190);
+            this.label3.Location = new System.Drawing.Point(27, 226);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 18;
@@ -148,11 +150,32 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 177);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 20);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "NCC";
+            // 
+            // cbNCC
+            // 
+            this.cbNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbNCC.FormattingEnabled = true;
+            this.cbNCC.Location = new System.Drawing.Point(115, 174);
+            this.cbNCC.Name = "cbNCC";
+            this.cbNCC.Size = new System.Drawing.Size(148, 28);
+            this.cbNCC.TabIndex = 34;
+            // 
             // FrmModalImportProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 301);
+            this.Controls.Add(this.cbNCC);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.picSP);
@@ -186,5 +209,7 @@
         private FontAwesome.Sharp.IconPictureBox picSP;
         private FontAwesome.Sharp.IconButton btnHuy;
         private FontAwesome.Sharp.IconButton btnLuu;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cbNCC;
     }
 }

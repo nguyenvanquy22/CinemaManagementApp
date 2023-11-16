@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panelMoviesRatings = new System.Windows.Forms.Panel();
             this.panelMovieChart = new System.Windows.Forms.Panel();
             this.dgvTopMovies = new System.Windows.Forms.DataGridView();
@@ -113,17 +113,17 @@
             // 
             // chartMovies
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartMovies.ChartAreas.Add(chartArea1);
+            chartArea7.Name = "ChartArea1";
+            this.chartMovies.ChartAreas.Add(chartArea7);
             this.chartMovies.Dock = System.Windows.Forms.DockStyle.Top;
-            legend1.Name = "Legend1";
-            this.chartMovies.Legends.Add(legend1);
+            legend7.Name = "Legend1";
+            this.chartMovies.Legends.Add(legend7);
             this.chartMovies.Location = new System.Drawing.Point(0, 0);
             this.chartMovies.Name = "chartMovies";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Movies";
-            this.chartMovies.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Movies";
+            this.chartMovies.Series.Add(series7);
             this.chartMovies.Size = new System.Drawing.Size(489, 215);
             this.chartMovies.TabIndex = 2;
             this.chartMovies.Text = "chart2";
@@ -189,7 +189,7 @@
             this.panelProductsRatings.Location = new System.Drawing.Point(499, 0);
             this.panelProductsRatings.Name = "panelProductsRatings";
             this.panelProductsRatings.Size = new System.Drawing.Size(480, 586);
-            this.panelProductsRatings.TabIndex = 2;
+            this.panelProductsRatings.TabIndex = 3;
             // 
             // panelProductChart
             // 
@@ -229,17 +229,17 @@
             // 
             // chartProducts
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartProducts.ChartAreas.Add(chartArea2);
+            chartArea8.Name = "ChartArea1";
+            this.chartProducts.ChartAreas.Add(chartArea8);
             this.chartProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            legend2.Name = "Legend1";
-            this.chartProducts.Legends.Add(legend2);
+            legend8.Name = "Legend1";
+            this.chartProducts.Legends.Add(legend8);
             this.chartProducts.Location = new System.Drawing.Point(0, 0);
             this.chartProducts.Name = "chartProducts";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Products";
-            this.chartProducts.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Products";
+            this.chartProducts.Series.Add(series8);
             this.chartProducts.Size = new System.Drawing.Size(480, 218);
             this.chartProducts.TabIndex = 2;
             this.chartProducts.Text = "chart1";
@@ -258,6 +258,7 @@
             // 
             // cbProdTimeMonth
             // 
+            this.cbProdTimeMonth.Enabled = false;
             this.cbProdTimeMonth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbProdTimeMonth.FormattingEnabled = true;
             this.cbProdTimeMonth.Location = new System.Drawing.Point(265, 19);
@@ -319,21 +320,21 @@
 		#endregion
 
 		private System.Windows.Forms.Panel panelMoviesRatings;
-		private System.Windows.Forms.Splitter splitter1;
-		private System.Windows.Forms.Panel panelProductsRatings;
 		private System.Windows.Forms.Panel panelMovieFilter;
 		private System.Windows.Forms.Panel panelMovieChart;
 		private System.Windows.Forms.DataGridView dgvTopMovies;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.DataVisualization.Charting.Chart chartMovies;
-		private System.Windows.Forms.Panel panelProductFilter;
-		private System.Windows.Forms.Panel panelProductChart;
-		private System.Windows.Forms.DataGridView dgvTopProducts;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.DataVisualization.Charting.Chart chartProducts;
         private System.Windows.Forms.ComboBox cbMovieTimeMonth;
         private System.Windows.Forms.ComboBox cbMovieTimeYear;
         private System.Windows.Forms.ComboBox cbMoviePeriod;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Panel panelProductsRatings;
+        private System.Windows.Forms.Panel panelProductChart;
+        private System.Windows.Forms.DataGridView dgvTopProducts;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProducts;
+        private System.Windows.Forms.Panel panelProductFilter;
         private System.Windows.Forms.ComboBox cbProdTimeMonth;
         private System.Windows.Forms.ComboBox cbProdTimeYear;
         private System.Windows.Forms.ComboBox cbProdPeriod;

@@ -17,6 +17,8 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal
         DataProcessor dt = new DataProcessor();
         Functions ft = new Functions();
         Dictionary<string, object[]> mapSP = new Dictionary<string, object[]>();
+        Dictionary<string, string> mapNCC = new Dictionary<string, string>();
+
         public FrmModalImportProduct()
         {
             InitializeComponent();
@@ -31,6 +33,16 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal
                 mapSP[sp[1].ToString()] = new object[] { sp[0].ToString(), sp[2].ToString(), sp[3].ToString() };
                 cbTenSP.Items.Add(sp["TenSP"].ToString());
             }
+
+            DataTable listNCC = dt.ReadData("select MaNCC, TenNCC from NHACUNGCAP");
+
+            foreach (DataRow ncc in listNCC.Rows)
+            {
+                mapNCC[ncc[1].ToString()] = ncc[0].ToString();
+                cbNCC.Items.Add(ncc["TenNCC"].ToString());
+            }
+
+
         }
 
         private void cbTenSP_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,7 +66,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal
             string mahdn = ft.SinhMaTuDong("HOADONNHAP", "MaHDN", "HDN00");
             sql = "INSERT INTO HOADONNHAP(MaHDN, NgayNhapHD, MaNV, MaNCC) VALUES(";
             sql += "'" + mahdn + "', '" + DateTime.Now.ToString("yyyy-MM-dd") + "', '"
-                + FrmLogin.staffID + "','" + "NCC001" + "')"; 
+                + FrmLogin.staffID + "','" + mapNCC[cbNCC.Text] + "')"; 
             dt.ChangeData (sql);
 
             // add cthdn

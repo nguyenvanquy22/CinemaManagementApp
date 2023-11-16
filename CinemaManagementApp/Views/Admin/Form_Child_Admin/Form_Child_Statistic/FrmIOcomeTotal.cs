@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
 {
@@ -36,11 +37,13 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 ";
             DataTable minYearTable = dtbase.ReadData(sql);
             int minYear = int.Parse(minYearTable.Rows[0][0].ToString());
+            int countYearItems = -1;
             for (int i = minYear; i <= DateTime.Now.Year; i++)
             {
                 cbTimeYear.Items.Add(i.ToString());
+                countYearItems++;
             }
-            cbTimeYear.SelectedIndex = 0;
+            cbTimeYear.SelectedIndex = countYearItems;
 
             for (int i = 1; i <= 12; i++)
             {
@@ -86,8 +89,7 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
             double totalTicket = 0;
             double totalIncome = 0;
 
-            Series seriesIOCome = chartIOCome.Series["IOCome"];
-            seriesIOCome.Points.Clear();
+            IDictionary<int, double> listDoanhThu = new Dictionary<int, double>();
             for (int row = 0; row < doanhThuTable.Rows.Count; row++)
             {
                 int time = int.Parse(doanhThuTable.Rows[row][0].ToString());
@@ -96,7 +98,22 @@ namespace CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Child_Statistic
                 totalTicket += double.Parse(doanhThuTable.Rows[row][2].ToString());
                 totalIncome += doanhThu;
 
-                seriesIOCome.Points.AddXY(time, doanhThu);
+                listDoanhThu[time] = doanhThu;
+            }
+
+            int valuesQuantity;
+            Series seriesIOCome = chartIOCome.Series["IOCome"];
+            seriesIOCome.Points.Clear();
+            
+            if (periodStatistic == "Năm") valuesQuantity = 12;
+            else valuesQuantity = 31;
+
+            for (int i = 1; i <= valuesQuantity; i++)
+            {
+                double value = listDoanhThu.ContainsKey(i) ? listDoanhThu[i] : 0;
+                //MessageBox.Show(value.ToString());
+
+                seriesIOCome.Points.AddXY(i, value);
             }
 
             lblIncomeTotalValue.Text = Math.Round(totalIncome,2).ToString() + "K VND";

@@ -41,20 +41,20 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelTitle = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.lblAdminName = new System.Windows.Forms.Label();
             this.iconAdminName = new FontAwesome.Sharp.IconPictureBox();
             this.lblTitleChildForm = new System.Windows.Forms.Label();
             this.iconCurrChildForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panelTitle.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconAdminName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconCurrChildForm)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -315,6 +315,16 @@
             this.panelTitle.Size = new System.Drawing.Size(1014, 80);
             this.panelTitle.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblAdminName);
+            this.panel1.Controls.Add(this.iconAdminName);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(753, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(261, 80);
+            this.panel1.TabIndex = 4;
+            // 
             // lblAdminName
             // 
             this.lblAdminName.AutoSize = true;
@@ -383,16 +393,6 @@
             this.panelDesktop.Size = new System.Drawing.Size(1014, 566);
             this.panelDesktop.TabIndex = 3;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblAdminName);
-            this.panel1.Controls.Add(this.iconAdminName);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(753, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 80);
-            this.panel1.TabIndex = 4;
-            // 
             // FrmAdmin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -404,16 +404,17 @@
             this.Name = "FrmAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmAdmin";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmAdmin_FormClosing);
             this.Load += new System.EventHandler(this.FrmAdmin_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panelTitle.ResumeLayout(false);
             this.panelTitle.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconAdminName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconCurrChildForm)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconAdminName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconCurrChildForm)).EndInit();
             this.ResumeLayout(false);
 
         }

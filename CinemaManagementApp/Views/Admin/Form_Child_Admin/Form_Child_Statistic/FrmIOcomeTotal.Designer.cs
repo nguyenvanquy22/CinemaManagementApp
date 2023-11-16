@@ -47,7 +47,6 @@
             this.lbInComeTotal = new System.Windows.Forms.Label();
             this.panelChart = new System.Windows.Forms.Panel();
             this.chartIOCome = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panelFilter.SuspendLayout();
             this.panelStatistic.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -102,12 +101,11 @@
             // 
             // panelStatistic
             // 
-            this.panelStatistic.Controls.Add(this.panel2);
             this.panelStatistic.Controls.Add(this.panel1);
             this.panelStatistic.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelStatistic.Location = new System.Drawing.Point(0, 73);
             this.panelStatistic.Name = "panelStatistic";
-            this.panelStatistic.Size = new System.Drawing.Size(261, 480);
+            this.panelStatistic.Size = new System.Drawing.Size(223, 480);
             this.panelStatistic.TabIndex = 1;
             // 
             // panel1
@@ -120,16 +118,16 @@
             this.panel1.Controls.Add(this.lblTicket);
             this.panel1.Controls.Add(this.lblIncomeTotalValue);
             this.panel1.Controls.Add(this.lbInComeTotal);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(261, 237);
+            this.panel1.Size = new System.Drawing.Size(223, 480);
             this.panel1.TabIndex = 0;
             // 
             // lblTotalProd
             // 
             this.lblTotalProd.AutoSize = true;
-            this.lblTotalProd.Location = new System.Drawing.Point(145, 175);
+            this.lblTotalProd.Location = new System.Drawing.Point(16, 306);
             this.lblTotalProd.Name = "lblTotalProd";
             this.lblTotalProd.Size = new System.Drawing.Size(14, 16);
             this.lblTotalProd.TabIndex = 8;
@@ -148,7 +146,7 @@
             // 
             this.lblPercentProd.AutoSize = true;
             this.lblPercentProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPercentProd.Location = new System.Drawing.Point(142, 130);
+            this.lblPercentProd.Location = new System.Drawing.Point(13, 261);
             this.lblPercentProd.Name = "lblPercentProd";
             this.lblPercentProd.Size = new System.Drawing.Size(35, 20);
             this.lblPercentProd.TabIndex = 6;
@@ -168,7 +166,7 @@
             // 
             this.lblProduct.AutoSize = true;
             this.lblProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProduct.Location = new System.Drawing.Point(142, 96);
+            this.lblProduct.Location = new System.Drawing.Point(13, 227);
             this.lblProduct.Name = "lblProduct";
             this.lblProduct.Size = new System.Drawing.Size(84, 20);
             this.lblProduct.TabIndex = 4;
@@ -208,9 +206,9 @@
             // 
             this.panelChart.Controls.Add(this.chartIOCome);
             this.panelChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChart.Location = new System.Drawing.Point(261, 73);
+            this.panelChart.Location = new System.Drawing.Point(223, 73);
             this.panelChart.Name = "panelChart";
-            this.panelChart.Size = new System.Drawing.Size(721, 480);
+            this.panelChart.Size = new System.Drawing.Size(759, 480);
             this.panelChart.TabIndex = 0;
             // 
             // chartIOCome
@@ -229,17 +227,9 @@
             series1.Name = "IOCome";
             series1.YValuesPerPoint = 4;
             this.chartIOCome.Series.Add(series1);
-            this.chartIOCome.Size = new System.Drawing.Size(721, 480);
+            this.chartIOCome.Size = new System.Drawing.Size(759, 480);
             this.chartIOCome.TabIndex = 0;
             this.chartIOCome.Text = "chart1";
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 237);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(261, 243);
-            this.panel2.TabIndex = 2;
             // 
             // FrmIOcomeTotal
             // 
@@ -280,6 +270,5 @@
         private System.Windows.Forms.Label lblTicket;
         private System.Windows.Forms.Label lblIncomeTotalValue;
         private System.Windows.Forms.Label lbInComeTotal;
-        private System.Windows.Forms.Panel panel2;
     }
 }
