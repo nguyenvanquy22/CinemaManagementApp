@@ -34,11 +34,11 @@
             this.tabIncomeInvoice = new System.Windows.Forms.Button();
             this.tabOutcomeInvoice = new System.Windows.Forms.Button();
             this.panelFilter = new System.Windows.Forms.Panel();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.panelListInvoice = new System.Windows.Forms.Panel();
             this.dgvListInvoice = new System.Windows.Forms.DataGridView();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.panelControl.SuspendLayout();
             this.panelTab.SuspendLayout();
             this.panelFilter.SuspendLayout();
@@ -126,6 +126,16 @@
             this.panelFilter.Size = new System.Drawing.Size(982, 70);
             this.panelFilter.TabIndex = 6;
             // 
+            // dtpDate
+            // 
+            this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDate.Location = new System.Drawing.Point(817, 25);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(153, 27);
+            this.dtpDate.TabIndex = 15;
+            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
+            // 
             // txtSearch
             // 
             this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -172,17 +182,8 @@
             this.dgvListInvoice.RowTemplate.Height = 24;
             this.dgvListInvoice.Size = new System.Drawing.Size(982, 371);
             this.dgvListInvoice.TabIndex = 0;
+            this.dgvListInvoice.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListInvoice_CellDoubleClick);
             this.dgvListInvoice.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListInvoice_CellFormatting);
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(817, 25);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(153, 27);
-            this.dtpDate.TabIndex = 15;
-            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // FrmInvoice
             // 

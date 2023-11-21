@@ -1,4 +1,5 @@
 ﻿using CinemaManagementApp.Classes;
+using CinemaManagementApp.Views.Admin.Form_Child_Admin.Form_Modal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -217,6 +218,14 @@ namespace CinemaManagementApp.Views.Admin.Form_Child
             else
             {
                 GetListInComeInvoice();
+            }
+        }
+
+        private void dgvListInvoice_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (FrmModalDetailInvoice modal = new FrmModalDetailInvoice(outcomeInvoice, dgvListInvoice.CurrentRow))
+            {
+                modal.ShowDialog();
             }
         }
     }

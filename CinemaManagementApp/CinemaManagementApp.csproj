@@ -86,6 +86,12 @@
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Child_Statistic\FrmRatings.Designer.cs">
       <DependentUpon>FrmRatings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalDetailInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalDetailInvoice.Designer.cs">
+      <DependentUpon>FrmModalDetailInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalUpdateShow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Child_Statistic\FrmRatings.resx">
       <DependentUpon>FrmRatings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalDetailInvoice.resx">
+      <DependentUpon>FrmModalDetailInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Admin\Form_Child_Admin\Form_Modal\FrmModalUpdateShow.resx">
       <DependentUpon>FrmModalUpdateShow.cs</DependentUpon>
